@@ -74,7 +74,10 @@ width: 300px;
 }
 
 .datos {
-    margin: 200px 0px !important;
+    padding: 200px 0px !important;
+    background-image: url(https://cdn.pixabay.com/photo/2021/06/01/07/05/paw-6300799_960_720.png);
+    background-repeat: no-repeat;
+    background-position-x: -500px ;
 }
 
 .datos div img {
@@ -175,7 +178,7 @@ width: 300px;
 
    .search {
 
-    
+
 
    }
 
