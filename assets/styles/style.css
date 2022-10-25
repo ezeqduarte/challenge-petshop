@@ -104,19 +104,18 @@ width: 300px;
 
 /*/ arranca juguetes /*/
 
-/* From uiverse.io by @alexruix */
+    .card {
+        width: 390px;
+        height: auto;
+    }
 
+    .card-img-top {
+        height: 60%;
+    }
 
-   /*/ termina card/*/
-.search {
-
-
-
-   }
-
-
-
-
+    .card-body {
+        height: 50%;
+    }
 
 /*/ footer /*/
 
