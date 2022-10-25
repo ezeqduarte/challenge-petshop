@@ -13,16 +13,46 @@
     color: rgb(51, 244, 244);
 }
 
+nav {
+    background-color: rgba(255, 255, 255, 0.938) !important;
+    z-index: 15;
+    
+}
+
+.navbar-toggler {
+    border: white 1px solid !important;
+}
+
+.navbar-toggler-icon {
+    color: white !important;
+}
+
 nav img {
     width: 50px;
 }
 
+
 nav .active {
-    text-decoration: underline;
+   border-bottom: 1px solid  rgb(51, 244, 244);    
+}
+
+.fondo_negro {
+    background-color: rgba(0, 0, 0, 0.486);
+    z-index: 13;
+    min-height:100vh;
+    width: 100%;
+    position: absolute;
 }
 
 .header_inicio {
-    min-height: 90vh;
+    z-index: 0;
+    min-height: 100vh;
+    background-image:url(https://s1.1zoom.me/b5457/460/Dogs_French_Bulldog_Colored_background_Glance_528929_1920x1080.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .header_inicio h2 {
@@ -31,6 +61,7 @@ nav .active {
 
 .informacion_inicio {
     width: 100%;
+    
 }
 
 .div_informacion_inicio{
@@ -42,9 +73,107 @@ width: 300px;
     width: 250px;
 }
 
+.datos {
+    margin: 200px 0px !important;
+}
+
 .datos div img {
     width: 100%;
 }
+
+.informacion_inicio {
+
+    margin-bottom: 200px !important;    
+
+}
+
+.galeria_inicio img {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    width: 450px;
+    
+}
+
+.galeria_inicio {
+    margin-bottom: 200px !important;
+}
+
+/*/ arranca juguetes /*/
+
+/*/card/*
+
+/* From uiverse.io by @alexruix */
+.card {
+    width: 290px;
+    height: 400px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;   
+   }
+   
+   .card-img {
+    background-color: #ffcaa6;
+    height: 55%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   
+   .card-info {
+    padding-top: 10%;
+   }
+   
+   svg {
+    width: 20px;
+    height: 20px;
+   }
+   
+   .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+   }
+   
+   /*Text*/
+   .text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+   }
+   
+   .text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+   }
+   
+   /*Button*/
+   .card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+   }
+   
+   /*Hover*/
+   .card-img:hover {
+    transform: translateY(-5%);
+   /*  box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px; */
+   }
+   
+   .card-button:hover {
+    border: 1px solid rgb(36,36,36);
+    background-color: rgb(219, 86, 86) ;
+   }
+
+   /*/ termina card/*/
+
+
 
 
 
@@ -117,6 +246,17 @@ width: 300px;
     opacity:0.9;
   }
   
+  .footer-clean .copyright {
+    margin-top:14px;
+    margin-bottom:0;
+    font-size:13px;
+    opacity:0.6;
+  }
+
+
+
+
+
   @media (max-width:991px) {
     .footer-clean .item.social > a {
       margin-top:40px;
@@ -129,9 +269,3 @@ width: 300px;
     }
   }
   
-  .footer-clean .copyright {
-    margin-top:14px;
-    margin-bottom:0;
-    font-size:13px;
-    opacity:0.6;
-  }
