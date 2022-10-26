@@ -16,6 +16,9 @@ async function getData() {
         imprimirArticulos($container_cards, articles)
         let filtroMedicamento = filterByText($container_cards, articles);
         imprimirArticulos($container_cards, filtroMedicamento);
+
+        let filtroJugueteRango = filterByRange($container_cards,articles)
+        imprimirArticulos($container_cards, filtroJugueteRango);
     } catch (error) {
         
         console.log(error);
@@ -40,6 +43,23 @@ function filterByText(contenedor,medicamento) {
     return filterMedicamento;
   }
 }
+
+const inputRangeMin = document.getElementById("customRangeMin")
+const inputRangeMax = document.getElementById("customRangeMax")
+inputRangeMin.addEventListener("input",getData)
+inputRangeMax.addEventListener("input",getData)
+
+
+function filterByRange(contenedor,medicamentos) {
+    let filterMedicamentos = medicamentos.filter((medicamento) =>
+    (medicamento.precio>= Number(inputRangeMin.value) &&  medicamento.precio <=Number(inputRangeMax.value)));
+    if (inputSearch.value === 0) {
+      return medicamentos;
+    } else {
+      contenedor.innerHTML = ` `;
+      return filterMedicamentos;
+    }
+  }
 
 
 function imprimirArticulos(contenedor, array) {
