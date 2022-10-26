@@ -10,7 +10,8 @@ async function getData() {
         let infoApi = data.response
 
         let articles = infoApi.filter(article=> article.tipo === "Medicamento") 
-        console.log(articles);
+        let articlesOrdernados = [...articles].sort((a,b)=> a.stock - b.stock)
+        console.log(articlesOrdernados);
 
         imprimirArticulos($container_cards, articles)
         let filtroMedicamento = filterByText($container_cards, articles);
@@ -44,9 +45,11 @@ function filterByText(contenedor,medicamento) {
 function imprimirArticulos(contenedor, array) {
        
     for (const objeto of array) {
-        contenedor.innerHTML += `
+        if (objeto.stock<5) {
+            contenedor.innerHTML += `
         
         <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
+        <p class="text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
             <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
             <div class="card-body d-flex flex-column align-items-around justify-content-center">                
                     <h5 class="card-title text-center">${objeto.nombre}</h5>
@@ -59,6 +62,24 @@ function imprimirArticulos(contenedor, array) {
         </article>
         
         `
+        } else {
+            contenedor.innerHTML += `
+        
+            <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
+                <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
+                <div class="card-body d-flex flex-column align-items-around justify-content-center">                
+                        <h5 class="card-title text-center">${objeto.nombre}</h5>
+                        <h5 class="card-title text-center">$${objeto.precio}</h5>                
+                        </div>
+                        <div class="botones d-flex mb-3 flex-row justify-content-evenly">
+                            <a href="#" class="btn btn-primary">Detalles</a>
+                            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        </div>
+            </article>
+            
+            `
+
+        }
     }
 
 }
