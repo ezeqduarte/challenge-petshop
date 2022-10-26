@@ -1,213 +1,231 @@
 * {
-
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Ubuntu', sans-serif;
-
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /*/ arranca inicio /*/
 
 .secundario {
-    color: rgb(51, 244, 244);
+  color: rgb(51, 244, 244);
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.938) !important;
-    z-index: 15;
-    
+  background-color: rgba(255, 255, 255, 0.938) !important;
+  z-index: 15;
 }
 
 .navbar-toggler {
-    border: white 1px solid !important;
+  border: white 1px solid !important;
 }
 
 .navbar-toggler-icon {
-    color: white !important;
+  color: white !important;
 }
 
 nav img {
-    width: 50px;
+  width: 70px;
 }
 
-
 nav .active {
-   border-bottom: 1px solid  rgb(51, 244, 244);    
+  border-bottom: 1px solid rgb(51, 244, 244);
 }
 
 .fondo_negro {
-    background-color: rgba(0, 0, 0, 0.486);
-    z-index: 13;
-    min-height:100vh;
-    width: 100%;
-    position: absolute;
+  background-color: rgba(0, 0, 0, 0.486);
+  z-index: 13;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
 }
 
 .header_inicio {
-    z-index: 0;
-    min-height: 100vh;
-    background-image:url(https://s1.1zoom.me/b5457/460/Dogs_French_Bulldog_Colored_background_Glance_528929_1920x1080.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  background-image: url(https://s1.1zoom.me/b5457/460/Dogs_French_Bulldog_Colored_background_Glance_528929_1920x1080.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.61) 0px -5px 30px;
 }
 
 .header_inicio h2 {
-    font-size: 3rem !important;
+  font-size: 3.5rem !important;
 }
 
 .informacion_inicio {
-    width: 100%;
-    
+  width: 100%;
+  margin: 90px 0px;
 }
 
-.div_informacion_inicio{
-width: 300px;
-
+.div_informacion_inicio {
+  width: 300px;
 }
 
 .div_informacion_inicio div img {
-    width: 250px;
+  width: 250px;
 }
 
 .datos {
-    padding: 200px 0px !important;
-    background-image: url(https://cdn.pixabay.com/photo/2021/06/01/07/05/paw-6300799_960_720.png);
-    background-position-x: -530px;
-    background-position-y: top;
+    
+    background-image: url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png), url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png);
+    background-size: 5%;
     background-repeat: no-repeat;
+    background-position-x: 50px, 150px;
+    background-position-y: 80px, 40px;
+}
+
+.texto_datos p {
 }
 
 .datos div img {
-    width: 100%;
+  width: 100%;
 }
 
 .informacion_inicio {
-
-    margin-bottom: 200px !important;    
-
 }
 
 .galeria_inicio img {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5px;
-    width: 450px;
-    
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  width: 450px;
 }
 
 .galeria_inicio {
-    margin-bottom: 200px !important;
 }
 
 /*/ arranca juguetes /*/
 
-    .card {
-        width: 390px;
-        height: auto;
-    }
+.card {
+  width: 390px;
+  height: auto;
+}
 
-    .card-img-top {
-        height: 60%;
-    }
+.card-img-top {
+  height: 60%;
+}
 
-    .card-body {
-        height: 50%;
-    }
+.card-body {
+  height: 50%;
+}
 
 /*/ footer /*/
 
 .footer-clean {
-    padding:50px 0;
-    background-color:#fff;
-    color:#4b4c4d;
-  }
-  
-  .footer-clean h3 {
-    margin-top:0;
-    margin-bottom:12px;
-    font-weight:bold;
-    font-size:16px;
-  }
-  
-  .footer-clean ul {
-    padding:0;
-    list-style:none;
-    line-height:1.6;
-    font-size:14px;
-    margin-bottom:0;
-  }
-  
-  .footer-clean ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.8;
-  }
-  
-  .footer-clean ul a:hover {
-    opacity:1;
-  }
-  
-  .footer-clean .item.social {
-    text-align:right;
-  }
-  
-  
-  .footer-clean .item.social > a {
-      font-size:24px;
-      width:40px;
-      height:40px;
-    line-height:40px;
-    display:inline-block;
-    text-align:center;
-    border-radius:50%;
-    border:1px solid #ccc;
-    margin-left:10px;
-    margin-top:22px;
-    color:inherit;
-    opacity:0.75;
+  padding: 50px 0;
+  background-color: #fff;
+  color: #4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-clean ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.footer-clean ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity: 1;
+}
+
+.footer-clean .item.social {
+  text-align: right;
+}
+
+.footer-clean .item.social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
 }
 
 .footer-clean .item.social > a:hover {
-    opacity:0.9;
+  opacity: 0.9;
 }
-  
+
 .footer-clean .copyright {
-    margin-top:14px;
-    margin-bottom:0;
-    font-size:13px;
-    opacity:0.6;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
 }
 
 /*/ ARRANCA MEDIA QUERY /*/
 
+/*/ Small devices (landscape phones, 576px and up)/*/
 
+@media (min-width: 576px) {
+  
+}
 
-    @media (max-width:767px) {
+/*/ Medium devices (tablets, 768px and up) /*/
+@media (min-width: 768px) {
   .footer-clean .item {
-    text-align:center;
-    padding-bottom:20px;
+    text-align: center;
+    padding-bottom: 20px;
   }
+  .footer-clean .item.social {
+    text-align: center;
   }
 
-    @media (max-width: 768px) {
-        .footer-clean .item.social {
-    text-align:center;
+  .footer-clean .item.social > a {
+    margin-top: 10px;
+  }
+
+  .texto_datos {
+    width: 60%;
   }
 }
 
+  /*/ Large devices (desktops, 992px and up) /*/
+  @media (min-width: 992px) {
+    .footer-clean .item.social > a {
+      margin-top: 40px;
+    }
 
-  @media (max-width:991px) {
     .footer-clean .item.social > a {
-      margin-top:40px;
+      margin-top: 40px;
     }
   }
-  
-  @media (max-width:767px) {
-    .footer-clean .item.social > a {
-      margin-top:10px;
-    }
+
+  /*/ X-Large devices (large desktops, 1200px and up) /*/
+  @media (min-width: 1200px) {
+    
   }
-  
+
+  /*/ XX-Large devices (larger desktops, 1400px and up) /*/
+  @media (min-width: 1400px) {
+
+    .texto_datos {
+        width: 33%;
+    }
+    
+  }
+
+
+
