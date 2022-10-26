@@ -113,20 +113,27 @@ nav .active {
   width: 250px;
 }
 
-.datos {
-  background-image: url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png),
-    url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png);
-  background-size: 5%;
-  background-repeat: no-repeat;
-  background-position-x: 50px, 150px;
-  background-position-y: 80px, 40px;
-}
+
 
 /* .texto_datos p {
 } */
 
+.datos {
+  min-height: 90vh;
+}
+
 .datos div img {
   width: 100%;
+}
+
+.mindy {
+  min-height: 45vh;
+  background-image: url("../img/mindy2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -150px ;
+
+
 }
 
 /* .informacion_inicio {
@@ -135,7 +142,7 @@ nav .active {
 .galeria_inicio img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  width: 450px;
+  width: 250px;
 }
 
 /* .galeria_inicio {
@@ -304,10 +311,7 @@ iframe {
 @media (min-width: 1400px) {
   .texto_datos {
     width: 33%;
-  }
-<<<<<<< HEAD
-}
-=======
+  }}
 
   input[type=range] {
     height: 33px;
@@ -393,4 +397,3 @@ iframe {
   input[type=range]:focus::-ms-fill-upper {
     background: #E8E8E8;
   }
->>>>>>> 1ab8e0c79e77fbf2f45115546301d1dc0bf9c93d
