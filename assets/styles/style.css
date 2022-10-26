@@ -366,7 +366,7 @@ footer {
 }
 
 .contact form {
-  width: 40%;
+  width: 100%;
 }
 
 .info_contact div img {
@@ -414,6 +414,8 @@ iframe {
     width: 575px;
     height: 450px;
   }
+
+ 
 }
 
 /*/ Large devices (desktops, 992px and up) /*/
@@ -429,6 +431,9 @@ iframe {
 
 /*/ X-Large devices (large desktops, 1200px and up) /*/
 @media (min-width: 1200px) {
+  .contact form {
+    width: 40%;
+  }
 }
 
 /*/ XX-Large devices (larger desktops, 1400px and up) /*/

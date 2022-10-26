@@ -65,24 +65,24 @@
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <img src="https://cdn-icons-gif.flaticon.com/6844/6844595.gif" alt="" />
                     <h4 class="text-center">
-                        Direccion<span class="secundario">.</span>
+                        <span class="primario">|</span> Direccion<span class="secundario">.</span>
                     </h4>
                     <p class="text-center">Rio de Janeiro 300, Caballito, Buenos Aires</p>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <img src="https://cdn-icons-gif.flaticon.com/8717/8717946.gif" alt="" />
-                    <h4 class="text-center">Email<span class="secundario">.</span></h4>
+                    <h4 class="text-center"><span class="primario">|</span> Email<span class="secundario">.</span></h4>
                     <p class="text-center">info@petshopfranco.com</p>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <img src="https://cdn-icons-gif.flaticon.com/8722/8722416.gif" alt="" />
-                    <h4 class="text-center">Llamanos<span class="secundario">.</span></h4>
+                    <h4 class="text-center"><span class="primario">|</span> Llamanos<span class="secundario">.</span></h4>
                     <p class="text-center">+54 (011) 1564844200</p>
                 </div>
             </div>
             <div class="d-flex div_formulario flex-column-reverse mb-5 flex-md-row flex-wrap justify-content-center gap-5">
                 
-            <div>
+            <div class="d-flex justify-content-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6982072067995!2d-58.43259848417477!3d-34.61179216543365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses!2sar!4v1666748446412!5m2!1ses!2sar"
                     style="border: 0" allowfullscreen="" loading="lazy"
@@ -91,32 +91,34 @@
             
             <form id="formulario" class="d-flex gap-1 justify-content-center flex-column">
                 
-                <label>Nombre y apellido<span class="secundario">.</span>
+                <label><span class="primario">|</span>Nombre y apellido<span class="secundario">.</span>
                     <input class="w-100" type="text" placeholder="Ingrese su nombre" />
                 </label>
 
                  
-                <label>Telefono<span class="secundario">.</span>
+                <label><span class="primario">|</span>Telefono<span class="secundario">.</span>
                     <input class="w-100" type="number" placeholder="Ingrese su nombre" />
                 </label>
 
 
 
-                <label>Nombre de su mascota<span class="secundario">.</span>
+                <label><span class="primario">|</span>Nombre de su mascota<span class="secundario">.</span>
                     <input class="w-100" type="text" placeholder="Ingrese el nombre de su mascota" />
                 </label>
-                <fieldset class="text-center">
-                    <label>Perro<span class="secundario">.</span>
-                       <input type="radio" name="raza" value="perro">
+                
+                    <legend class="fs-6"><span class="primario">|</span>Tu mascota es<span class="secundario">:</span></legend>
+                    <fieldset class="text-center">
+                    <label>
+                       <input class="mx-2" type="radio" name="raza" value="perro">Perro<span class="secundario">.</span>
                     </label>
-                    <label>Gato<span class="secundario">.</span>
-                        <input type="radio" name="raza" value="gato">
+                    <label>
+                        <input class="mx-2" type="radio" name="raza" value="gato">Gato<span class="secundario">.</span>
                      </label>
-                     <label>Otros<span class="secundario">.</span>
-                        <input type="radio" name="raza" value="otros">
+                     <label>
+                        <input class="mx-2" type="radio" name="raza" value="otros">Otros<span class="secundario">.</span>
                      </label>
                 </fieldset>
-                <label >Correo electronico<span class="secundario">.</span>
+                <label ><span class="primario">|</span>Correo electronico<span class="secundario">.</span>
                     <input class="w-100" type="email" placeholder="Ingrese su correo" />
                 </label>
                 <label class="flex-grow-1">Ingrese su consulta
