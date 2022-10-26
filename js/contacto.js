@@ -31,7 +31,9 @@ function FormData(evento) {
     }
 
     console.log(datosUsuario);
+    localStorage.setItem('ConsultaUsuario', JSON.stringify(datosUsuario))
     swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
+    $form.reset
     
 
 }
