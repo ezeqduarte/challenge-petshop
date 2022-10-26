@@ -11,14 +11,11 @@ async function getData() {
 
         let articles = infoApi.filter(article=> article.tipo === "Medicamento") 
         let articlesOrdernados = [...articles].sort((a,b)=> a.stock - b.stock)
-        console.log(articlesOrdernados);
+        /* console.log(articlesOrdernados); */
 
         imprimirArticulos($container_cards, articles)
-        let filtroMedicamento = filterByText($container_cards, articles);
-        imprimirArticulos($container_cards, filtroMedicamento);
 
-        let filtroJugueteRango = filterByRange($container_cards,articles)
-        imprimirArticulos($container_cards, filtroJugueteRango);
+        filtrosCruzados ($container_cards,articles)
     } catch (error) {
         
         console.log(error);
@@ -31,17 +28,14 @@ async function getData() {
 const inputSearch = document.getElementById("js-search");
 inputSearch.addEventListener("input", getData);
 
-function filterByText(contenedor,medicamento) {
+function filterByText(medicamento) {
   let filterMedicamento = medicamento.filter((medicamento) =>
     medicamento.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
   );
-  console.log(inputSearch.value);
   if (inputSearch.value === 0) {
-    return medicamento;
-  } else {
-    contenedor.innerHTML = ` `;
-    return filterMedicamento;
+    filterMedicamento = medicamento;
   }
+    return filterMedicamento;
 }
 
 const inputRangeMin = document.getElementById("customRangeMin")
@@ -50,17 +44,24 @@ inputRangeMin.addEventListener("input",getData)
 inputRangeMax.addEventListener("input",getData)
 
 
-function filterByRange(contenedor,medicamentos) {
+function filterByRange(medicamentos) {
     let filterMedicamentos = medicamentos.filter((medicamento) =>
     (medicamento.precio>= Number(inputRangeMin.value) &&  medicamento.precio <=Number(inputRangeMax.value)));
-    if (inputSearch.value === 0) {
-      return medicamentos;
-    } else {
-      contenedor.innerHTML = ` `;
       return filterMedicamentos;
-    }
   }
 
+  function filtrosCruzados (contenedor,articles){
+    arrayFiltroPorRango = filterByRange(articles)
+    arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
+
+    if (arrayFiltroPorPalabra.length === 0) {
+        contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun Medicamento</h2>`;
+      } else {
+        contenedor.innerHTML = ``;
+        imprimirArticulos(contenedor,arrayFiltroPorPalabra);
+      }
+
+}
 
 function imprimirArticulos(contenedor, array) {
        

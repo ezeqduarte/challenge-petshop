@@ -10,13 +10,10 @@ async function getData() {
     let articles = infoApi.filter((article) => article.tipo === "Juguete");
   /*   console.log(articles); */
 
-    imprimirArticulos($container_cards, articles);
+    imprimirArticulos($container_cards,articles);
 
-    let filtroJuguete = filterByText($container_cards, articles);
-    imprimirArticulos($container_cards, filtroJuguete);
+    filtrosCruzados ($container_cards,articles)
 
-    let filtroJugueteRango = filterByRange($container_cards,articles)
-    imprimirArticulos($container_cards, filtroJugueteRango);
   } catch (error) {
     console.log(error);
   }
@@ -25,16 +22,14 @@ async function getData() {
 const inputSearch = document.getElementById("js-search");
 inputSearch.addEventListener("input", getData);
 
-function filterByText(contenedor, juguetes) {
+function filterByText(juguetes) {
   let filterJuguetes = juguetes.filter((juguete) =>
     juguete.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
   );
   if (inputSearch.value === 0) {
-    return juguetes;
-  } else {
-    contenedor.innerHTML = ` `;
-    return filterJuguetes;
+    filterJuguetes = juguetes;
   }
+    return filterJuguetes;
 }
 
 const inputRangeMin = document.getElementById("customRangeMin")
@@ -43,17 +38,25 @@ inputRangeMin.addEventListener("input",getData)
 inputRangeMax.addEventListener("input",getData)
 
 
-function filterByRange(contenedor,juguetes) {
+function filterByRange(juguetes) {
     let filterJuguetes = juguetes.filter((juguete) =>
     (juguete.precio>= Number(inputRangeMin.value) &&  juguete.precio <=Number(inputRangeMax.value)));
-    if (inputSearch.value === 0) {
-      return juguetes;
-    } else {
-      contenedor.innerHTML = ` `;
-      return filterJuguetes;
-    }
+    return filterJuguetes;
   }
 
+
+function filtrosCruzados (contenedor,articles){
+    arrayFiltroPorRango = filterByRange(articles)
+    arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
+
+    if (arrayFiltroPorPalabra.length === 0) {
+        contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun juguete</h2>`;
+      } else {
+        contenedor.innerHTML = ``;
+        imprimirArticulos(contenedor,arrayFiltroPorPalabra);
+      }
+
+}
 function imprimirArticulos(contenedor, array) {
   for (const objeto of array) {
     if (objeto.stock < 5) {
