@@ -107,6 +107,7 @@ nav .active {
 .card {
   width: 390px;
   height: auto;
+  border-radius: 20px;
 }
 
 .card-img-top {
