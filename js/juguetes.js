@@ -13,7 +13,6 @@ async function getData() {
     imprimirArticulos($container_cards,articles);
 
     filtrosCruzados ($container_cards,articles)
-
   } catch (error) {
     console.log(error);
   }
@@ -55,8 +54,17 @@ function filtrosCruzados (contenedor,articles){
         contenedor.innerHTML = ``;
         imprimirArticulos(contenedor,arrayFiltroPorPalabra);
       }
+      actulizarValueRange()
+}
+ valueRangeMin = document.getElementById("valueRangeMin")
+ valueRangeMax = document.getElementById("valueRangeMax")
+
+function actulizarValueRange(){
+    valueRangeMin.innerHTML=`$ ${Number(inputRangeMin.value)}`
+    valueRangeMax.innerHTML=`$ ${Number(inputRangeMax.value)}`
 
 }
+
 function imprimirArticulos(contenedor, array) {
   for (const objeto of array) {
     if (objeto.stock < 5) {

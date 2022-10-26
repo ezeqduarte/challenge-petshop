@@ -69,12 +69,13 @@
 
     <main class="py-5">
 
-        <div class="productos d-flex flex-wrap justify-content-center">
+        <div class="productos d-flex flex-wrap justify-content-around align-items-center">
 
             <div class="d-flex flex-wrap">
-                <div class="w-100">Precio Minimo<input type="range" class="form-range w-50" min="0" max="1000" step="50" value="0" id="customRangeMin"></div>
-                <div class="w-100">Precio Minimo<input type="range" class="form-range w-50" min="0" max="1000" step="50" value="1000" id="customRangeMax"></div>
-                
+                <div class="w-100 d-flex justify-content-start align-items-center">
+                    <span class="p-2"> Precio Minimo</span><input type="range" class="form-range w-50" min="0" max="1000" step="50" value="0" id="customRangeMin"><span class="p-2" id="valueRangeMin"></span></div>
+                <div class="w-100 d-flex justify-content-start align-items-center"">
+                    <span class="p-2"> Precio Maximo</span><input type="range" class="form-range w-50" min="0" max="1000" step="50" value="1000" id="customRangeMax"><span class="p-2" id="valueRangeMax"></span></div>
             </div>
             
             <div class="search d-flex justify-content-center w-100">
