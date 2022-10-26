@@ -78,7 +78,7 @@ nav .active {
 
 
 .header_inicioFarmacia {
-  background-image: url(../img/fondofotodniperro.png);
+  background-image: url(../img/beagle-farmacia.webp);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,6 +131,20 @@ nav .active {
   font-size: 3.5rem !important;
 }
 
+/* carousel */
+
+.carousel-item img {
+  width: 100% !important;
+  height: 600px !important;
+  object-fit: cover;
+  object-position: 0px -80px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.308);
+  border-radius: 20px;
+}
+
 .mainDetalles {
   min-height: 50vh;
 }
@@ -145,7 +159,7 @@ nav .active {
 }
 
 .div_informacion_inicio div img {
-  width: 250px;
+  width: 160px;
 }
 
 .datos {
