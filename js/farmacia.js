@@ -60,6 +60,16 @@ function filterByRange(medicamentos) {
         contenedor.innerHTML = ``;
         imprimirArticulos(contenedor,arrayFiltroPorPalabra);
       }
+      actulizarValueRange()
+
+}
+
+valueRangeMin = document.getElementById("valueRangeMin")
+valueRangeMax = document.getElementById("valueRangeMax")
+
+function actulizarValueRange(){
+   valueRangeMin.innerHTML=`$ ${Number(inputRangeMin.value)}`
+   valueRangeMax.innerHTML=`$ ${Number(inputRangeMax.value)}`
 
 }
 
