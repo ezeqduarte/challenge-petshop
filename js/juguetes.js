@@ -41,7 +41,7 @@ function imprimirArticulos(contenedor, array) {
       contenedor.innerHTML += `
     
     <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
-    <p class="text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
+    <p class="barraStock text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
         <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
         <div class="card-body d-flex flex-column align-items-around justify-content-center">                
                 <h5 class="card-title text-center">${objeto.nombre}</h5>

@@ -107,7 +107,7 @@ nav .active {
 .card {
   width: 390px;
   height: auto;
-  border-radius: 20px;
+ border-radius:  5px 5px 20px 20px;
 }
 
 .card-img-top {
@@ -116,6 +116,13 @@ nav .active {
 
 .card-body {
   height: 50%;
+}
+
+.barraStock {
+  border-radius:  5px 5px 0px 0px;
+  font-family: 'DM Sans', sans-serif;
+  background-color: rgb(202, 26, 70) !important;
+  font-size: 12px;
 }
 
 /*/ footer /*/
