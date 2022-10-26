@@ -13,7 +13,8 @@ async function getData() {
         console.log(articles);
 
         imprimirArticulos($container_cards, articles)
-
+        let filtroMedicamento = filterByText($container_cards, articles);
+        imprimirArticulos($container_cards, filtroMedicamento);
     } catch (error) {
         
         console.log(error);
@@ -21,6 +22,24 @@ async function getData() {
     }
 
 }
+
+
+const inputSearch = document.getElementById("js-search");
+inputSearch.addEventListener("input", getData);
+
+function filterByText(contenedor,medicamento) {
+  let filterMedicamento = medicamento.filter((medicamento) =>
+    medicamento.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
+  );
+  console.log(inputSearch.value);
+  if (inputSearch.value === 0) {
+    return medicamento;
+  } else {
+    contenedor.innerHTML = ` `;
+    return filterMedicamento;
+  }
+}
+
 
 function imprimirArticulos(contenedor, array) {
        

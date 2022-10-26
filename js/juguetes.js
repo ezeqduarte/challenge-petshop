@@ -1,31 +1,43 @@
-let $container_cards = document.getElementById("contenedor_cards")
+let $container_cards = document.getElementById("contenedor_cards");
 
 async function getData() {
-    
-    try {
-    
-        let data = await fetch("https://apipetshop.herokuapp.com/api/articulos")
-        data = await data.json()
-        
-        let infoApi = data.response
+  try {
+    let data = await fetch("https://apipetshop.herokuapp.com/api/articulos");
+    data = await data.json();
 
-        let articles = infoApi.filter(article=> article.tipo === "Juguete") 
-        console.log(articles);
+    let infoApi = data.response;
 
-        imprimirArticulos($container_cards, articles)
+    let articles = infoApi.filter((article) => article.tipo === "Juguete");
+    console.log(articles);
 
-    } catch (error) {
-        
-        console.log(error);
+    imprimirArticulos($container_cards, articles);
 
-    }
+    let filtroJuguete = filterByText($container_cards, articles);
+    imprimirArticulos($container_cards, filtroJuguete);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+const inputSearch = document.getElementById("js-search");
+inputSearch.addEventListener("input", getData);
+
+function filterByText(contenedor,juguetes) {
+  let filterJuguetes = juguetes.filter((juguete) =>
+    juguete.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
+  );
+  console.log(inputSearch.value);
+  if (inputSearch.value === 0) {
+    return juguetes;
+  } else {
+    contenedor.innerHTML = ` `;
+    return filterJuguetes;
+  }
 }
 
 function imprimirArticulos(contenedor, array) {
-       
-    for (const objeto of array) {
-        contenedor.innerHTML += `
+  for (const objeto of array) {
+    contenedor.innerHTML += `
         
         <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
             <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
@@ -39,9 +51,8 @@ function imprimirArticulos(contenedor, array) {
                     </div>
         </article>
         
-        `
-    }
-
+        `;
+  }
 }
 
-getData()
+getData();
