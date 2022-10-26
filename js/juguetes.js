@@ -7,13 +7,15 @@ async function getData() {
 
     let infoApi = data.response;
 
-    let articles = infoApi.filter((article) => article.tipo === "Juguete");
+    let articles = [...infoApi].filter((article) => article.tipo === "Juguete").sort((a,b)=> a.stock - b.stock);
+
     console.log(articles);
+    console.log(infoApi);
+  
 
-    imprimirArticulos($container_cards, articles);
+    imprimirArticulos($container_cards,articles);
 
-    let filtroJuguete = filterByText($container_cards, articles);
-    imprimirArticulos($container_cards, filtroJuguete);
+    filtrosCruzados ($container_cards,articles)
   } catch (error) {
     console.log(error);
   }
@@ -22,17 +24,48 @@ async function getData() {
 const inputSearch = document.getElementById("js-search");
 inputSearch.addEventListener("input", getData);
 
-function filterByText(contenedor, juguetes) {
+function filterByText(juguetes) {
   let filterJuguetes = juguetes.filter((juguete) =>
     juguete.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
   );
-  console.log(inputSearch.value);
   if (inputSearch.value === 0) {
-    return juguetes;
-  } else {
-    contenedor.innerHTML = ` `;
+    filterJuguetes = juguetes;
+  }
+    return filterJuguetes;
+}
+
+const inputRangeMin = document.getElementById("customRangeMin")
+const inputRangeMax = document.getElementById("customRangeMax")
+inputRangeMin.addEventListener("input",getData)
+inputRangeMax.addEventListener("input",getData)
+
+
+function filterByRange(juguetes) {
+    let filterJuguetes = juguetes.filter((juguete) =>
+    (juguete.precio>= Number(inputRangeMin.value) &&  juguete.precio <=Number(inputRangeMax.value)));
     return filterJuguetes;
   }
+
+
+function filtrosCruzados (contenedor,articles){
+    arrayFiltroPorRango = filterByRange(articles)
+    arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
+
+    if (arrayFiltroPorPalabra.length === 0) {
+        contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun juguete</h2>`;
+      } else {
+        contenedor.innerHTML = ``;
+        imprimirArticulos(contenedor,arrayFiltroPorPalabra);
+      }
+      actulizarValueRange()
+}
+ valueRangeMin = document.getElementById("valueRangeMin")
+ valueRangeMax = document.getElementById("valueRangeMax")
+
+function actulizarValueRange(){
+    valueRangeMin.innerHTML=`$ ${Number(inputRangeMin.value)}`
+    valueRangeMax.innerHTML=`$ ${Number(inputRangeMax.value)}`
+
 }
 
 function imprimirArticulos(contenedor, array) {
