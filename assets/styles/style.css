@@ -176,6 +176,19 @@ nav .active {
   opacity: 0.6;
 }
 
+
+/*/ arranca contact /*/
+
+.contact form {
+
+    width: 50%;
+}
+
+.info_contact div img {
+    width: 250px;
+}
+
+
 /*/ ARRANCA MEDIA QUERY /*/
 
 /*/ Small devices (landscape phones, 576px and up)/*/
