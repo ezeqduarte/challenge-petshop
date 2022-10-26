@@ -6,9 +6,9 @@ let $maincarrito = document.getElementById("main_carrito")
 let $btnCompra = document.getElementById("comprarcarro")
 
 imprimirArticulos(container_cards,carro);
+let btn_carro = document.querySelectorAll(`[class^="btn eliminar"]`);
 
 
-console.log(carro);
 
 
 
