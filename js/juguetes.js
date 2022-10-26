@@ -8,12 +8,15 @@ async function getData() {
     let infoApi = data.response;
 
     let articles = infoApi.filter((article) => article.tipo === "Juguete");
-    console.log(articles);
+  /*   console.log(articles); */
 
     imprimirArticulos($container_cards, articles);
 
     let filtroJuguete = filterByText($container_cards, articles);
     imprimirArticulos($container_cards, filtroJuguete);
+
+    let filtroJugueteRango = filterByRange($container_cards,articles)
+    imprimirArticulos($container_cards, filtroJugueteRango);
   } catch (error) {
     console.log(error);
   }
@@ -26,7 +29,6 @@ function filterByText(contenedor,juguetes) {
   let filterJuguetes = juguetes.filter((juguete) =>
     juguete.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
   );
-  console.log(inputSearch.value);
   if (inputSearch.value === 0) {
     return juguetes;
   } else {
@@ -34,6 +36,23 @@ function filterByText(contenedor,juguetes) {
     return filterJuguetes;
   }
 }
+
+const inputRangeMin = document.getElementById("customRangeMin")
+const inputRangeMax = document.getElementById("customRangeMax")
+inputRangeMin.addEventListener("input",getData)
+inputRangeMax.addEventListener("input",getData)
+
+
+function filterByRange(contenedor,juguetes) {
+    let filterJuguetes = juguetes.filter((juguete) =>
+    (juguete.precio>= Number(inputRangeMin.value) &&  juguete.precio <=Number(inputRangeMax.value)));
+    if (inputSearch.value === 0) {
+      return juguetes;
+    } else {
+      contenedor.innerHTML = ` `;
+      return filterJuguetes;
+    }
+  }
 
 function imprimirArticulos(contenedor, array) {
   for (const objeto of array) {
