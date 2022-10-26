@@ -45,9 +45,10 @@ inputRangeMax.addEventListener("input",getData)
 
 
 function filterByRange(medicamentos) {
-    let filterMedicamentos = medicamentos.filter((medicamento) =>
-    (medicamento.precio>= Number(inputRangeMin.value) &&  medicamento.precio <=Number(inputRangeMax.value)));
-      return filterMedicamentos;
+    let filterMedicamentos = medicamentos.filter((medicamento)=>
+    (medicamento.precio>= Number(inputRangeMin.value) &&  medicamento.precio <=Number(inputRangeMax.value)
+    ));
+    return filterMedicamentos;
   }
 
   function filtrosCruzados (contenedor,articles){
@@ -60,18 +61,41 @@ function filterByRange(medicamentos) {
         contenedor.innerHTML = ``;
         imprimirArticulos(contenedor,arrayFiltroPorPalabra);
       }
-      actulizarValueRange()
+      
+      inputSearchMinValue.value = inputRangeMin.value
+      inputSearchMaxValue.value = inputRangeMax.value
 
 }
 
-valueRangeMin = document.getElementById("valueRangeMin")
-valueRangeMax = document.getElementById("valueRangeMax")
 
-function actulizarValueRange(){
-   valueRangeMin.innerHTML=`$ ${Number(inputRangeMin.value)}`
-   valueRangeMax.innerHTML=`$ ${Number(inputRangeMax.value)}`
+inputSearchMinValue = document.getElementById("js-searchMin")
+inputSearchMinValue.addEventListener("input",actualizarRangeMin)
 
+function actualizarRangeMin (){
+    if(inputSearchMinValue.value === ""){
+        inputRangeMin.value = 0
+    }
+    else{
+        inputRangeMin.value = inputSearchMinValue.value
+    }
+    console.log(inputSearchMinValue);
+    getData()
 }
+
+inputSearchMaxValue = document.getElementById("js-searchMax")
+inputSearchMaxValue.addEventListener("input",actualizarRangeMax)
+
+function actualizarRangeMax (){
+    if(inputSearchMaxValue.value === ""){
+        inputRangeMax.value = 0
+    }
+    else{
+        inputRangeMax.value = inputSearchMaxValue.value
+    }
+    getData()
+}
+
+
 
 function imprimirArticulos(contenedor, array) {
        
