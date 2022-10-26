@@ -131,6 +131,8 @@ nav .active {
 }
 
 
+
+
 .header_inicio h2 {
   font-size: 3.5rem !important;
 }
@@ -386,6 +388,34 @@ iframe {
     width: 342px;
     height: 35px;
     text-align: center !important;
+}
+
+.card-carrito {
+  border-top: solid 1px black !important;
+  border-bottom: solid 1px black !important;
+  width: 60vw;
+}
+
+#contenedor_cards {
+  min-height: 30vh !important;
+}
+
+.btn-limpiar {
+  
+  background-color: rgb(216, 216, 216) !important;
+  border: none !important;
+
+}
+
+.btn-comprar {
+
+  background-color: rgb(216, 216, 216) !important;
+  border: none !important;
+
+}
+
+.btn-borrar {
+  border: none;
 }
 
 @charset "utf-8";

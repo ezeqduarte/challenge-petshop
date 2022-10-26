@@ -2,59 +2,95 @@ import { Carro } from './carro.js'
 let oCarro = new Carro();
 let carro = JSON.parse(localStorage.getItem('carro'));
 let container_cards = document.getElementById("contenedor_cards");
+let $maincarrito = document.getElementById("main_carrito")
+let $btnCompra = document.getElementById("comprarcarro")
+
 imprimirArticulos(container_cards,carro);
+
+
+console.log(carro);
+
+
 
 
 
 function imprimirArticulos(contenedor, array) {
-    for (const objeto of array) {
-        if (objeto.stock < 5) {
-            contenedor.innerHTML += `
-            <div class="tarjeta">
-            <div class="contenido">
-                <div class="ladoIzq d-flex justify-content-center align-items-center flex-column">
-                <h2 class="titulo text-center">"${objeto.nombre}"</h2>
-                <div class="cuerpo">
-                <p class="text-center">Este es un texto que pretende describir o presentar el artículo, la información o los datos que queramos presentar.</p>
-                <div class="d-flex justify-content-evenly">
-                      <button class="btn">Eliminar del carrito</button>
-                      <a class="btn" href="index.html">Volver al inicio</a>
-                
-                      </div>
-                      <div class="d-flex justify-content-center text-center">
-      <p class="barraStock barrastockCarrito text-white mt-5 text-center">Queda(n) ${objeto.stock} en stock</p>
-</div>
-            </div>
-             </div>
-              <div class="ladoDer">
-                 <img src="${objeto.imagen}" alt="${objeto.nombre}"/></div>
-              </div>
 
-          </div>
-          
-      
-      `;
-        } else {
-            contenedor.innerHTML += `
-      
-            <div class="tarjeta">
-            <div class="contenido">
-                <div class="ladoIzq d-flex justify-content-center align-items-center flex-column">
-                <h2 class="titulo text-center">"${objeto.nombre}"</h2>
-                <div class="cuerpo">
-                <p class="text-center">Este es un texto que pretende describir o presentar el artículo, la información o los datos que queramos presentar.</p>
-                <div class="d-flex justify-content-evenly">
-                      <button class="btn">Eliminar del carrito</button>
-                      <a class="btn" href="index.html">Volver al inicio</a>
-                </div>
-            </div>
-             </div>
-              <div class="ladoDer">
-                 <img src="${objeto.imagen}" alt="${objeto.nombre}"/></div>
-              </div>
-          </div>
-          
-          `;
-        }
+    if (carro===null) {
+
+        contenedor.innerHTML = ` <h2>Tu carrito esta vacio, en la tienda podes encontrar nuestros productos.</h2>`
+        return
     }
+
+    if (carro) {
+
+        for (const objeto of array) {
+             if (objeto.stock < 5) {
+                contenedor.innerHTML += `
+           
+                 <div class="d-flex">
+                 
+                         <div class="d-flex card-carrito justify-content-evenly align-items-center flex-column flex-md-row" style="position: relative;">
+                         
+                             <div style="position: absolute; top: 10px; right: 10px;">
+                                 <button class="py-0 btn-borrar px-2 rounded">
+                                    X
+                                 </button>
+                                 </div>
+                                 <p style="position: absolute; top: 10px; left: 30px;" class="py-0 bg-secondary text-white btn-borrar px-2 rounded">Ultimas en stock</p>
+                             <div>
+                                 <img src="${objeto.imagen}" style="width: 200px ;" alt="${objeto.nombre}">
+                             </div>
+                             <div class="d-flex flex-column gap-3 flex-grow-1">
+                                 <h2 class="w-100 text-center">${objeto.nombre}</h2>
+                                 <p class="w-100 text-center">Cantidad añadida al carrito: ${objeto.encarro}</p>
+                                 <p class="w-100 text-center">Precio unitario: $ ${objeto.precio} </p>
+                                 <p class="w-100 text-center">Precio total: $ ${objeto.precio*objeto.encarro}</p>
+                             </div>                        
+                         </div>
+                     </div>
+               
+               `;
+             } else {
+                 contenedor.innerHTML += `
+           
+                 <div class="d-flex">
+                         <div class="d-flex card-carrito justify-content-evenly align-items-center flex-column flex-md-row" style="position: relative;">
+                             <div style="position: absolute; top: 10px; right: 10px;">
+                                 <button class="py-0 btn-borrar px-2 rounded">
+                                    X
+                                 </button>
+                             </div>
+                             <div>
+                                 <img src="${objeto.imagen}" style="width: 200px ;" alt="${objeto.nombre}">
+                             </div>
+                             <div class="d-flex flex-column flex-grow-1">
+                                 <h2 class="w-100 text-center">${objeto.nombre}</h2>
+                                 <p>Cantidad añadida al carrito: ${objeto.encarro}</p>
+                                 <p>Precio total: $ ${objeto.precio*objeto.encarro}</p>
+                             </div>                        
+                         </div>
+                     </div>
+               
+               `;
+             }
+         }        
+     
+         $maincarrito.innerHTML += ` 
+         <div class="py-4">
+             <button id="limpiarcarro" class="btn-limpiar rounded p-2 mx-5"">Limpiar carrito</button>
+             <button id="comprarcarro" class="btn-comprar rounded p-2 mx-5">Realizar compra</button>
+         </div> `
+         return
+    }
+
+    
+}
+
+$btnCompra.addEventListener('click', (evento)=> {realizarComprar(evento)})
+
+function realizarComprar(evento) {       
+
+    swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
+
 }
