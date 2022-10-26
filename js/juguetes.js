@@ -47,7 +47,7 @@ function imprimirArticulos(contenedor, array) {
                     <h5 class="card-title text-center">$${objeto.precio}</h5>                
                     </div>
                     <div class="botones d-flex mb-3 flex-row justify-content-evenly">
-                        <a href="#" class="btn btn-primary">Detalles</a>
+                        <a href="./detalles.html" class="btn btn-primary">Detalles</a>
                         <a href="#" class="btn btn-primary">Agregar al carrito</a>
                     </div>
         </article>
