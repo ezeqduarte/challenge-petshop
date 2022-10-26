@@ -8,8 +8,16 @@
 /*/ arranca inicio /*/
 
 .secundario {
-  color: rgb(51, 244, 244);
+  color: rgba(240, 159, 10, 0.966);
 }
+
+.mascotas {
+  position: absolute;
+  bottom: 150px;
+  left: 35%;
+  width: 550px;
+}
+
 
 nav {
   background-color: rgba(255, 255, 255, 0.938) !important;
@@ -140,13 +148,17 @@ nav .active {
   width: 250px;
 }
 
-
+.datos {
+ min-height: 80vh;
+}
 
 /* .texto_datos p {
 } */
 
-.datos div img {
+.datos img {
   width: 100%;
+  transform: rotate(-180deg);
+  transform:rotateY(180deg);
 }
 
 /* .informacion_inicio {
@@ -253,10 +265,22 @@ flex-direction: column;
   border-radius: 10px 10px 0px 0px ;
 }
 
+.explora {
+  background-image: url(https://img.freepik.com/foto-gratis/dormir-beagle-cachorro-perro-sobre-fondo-azul_1150-18196.jpg?w=1480&t=st=1666810137~exp=1666810737~hmac=9aaff735674a2bac60b7b1870f7d6874900b9a3e11ae60f2e7c2e62f1d892dea);
+  background-position-y: -500px ;
+  background-position-x: center ;  
+  background-size: cover;
+  min-height: 50vh;
+
+}
+
 /*/ footer /*/
 
-.footer-clean {
-  margin-top: 150px;
+footer {
+  position: relative;
+}
+
+.footer-clean {  
   padding: 50px 0;
   background-color: #fff;
   color: #4b4c4d;
