@@ -3,7 +3,7 @@ let oCarro = new Carro();
 let carro = JSON.parse(localStorage.getItem('carro'));
 let container_cards = document.getElementById("contenedor_cards");
 imprimirArticulos(container_cards,carro);
-
+let btn_carro = document.querySelectorAll(`[class^="btn eliminar"]`);
 
 
 function imprimirArticulos(contenedor, array) {
@@ -17,7 +17,7 @@ function imprimirArticulos(contenedor, array) {
                 <div class="cuerpo">
                 <p class="text-center">Este es un texto que pretende describir o presentar el artículo, la información o los datos que queramos presentar.</p>
                 <div class="d-flex justify-content-evenly">
-                      <button class="btn">Eliminar del carrito</button>
+                      <button class="btn eliminar" id="${objeto.nombre}">Eliminar del carrito</button>
                       <a class="btn" href="index.html">Volver al inicio</a>
                 
                       </div>
@@ -44,7 +44,7 @@ function imprimirArticulos(contenedor, array) {
                 <div class="cuerpo">
                 <p class="text-center">Este es un texto que pretende describir o presentar el artículo, la información o los datos que queramos presentar.</p>
                 <div class="d-flex justify-content-evenly">
-                      <button class="btn">Eliminar del carrito</button>
+                      <button class="btn eliminar" id="${objeto.nombre}">Eliminar del carrito</button>
                       <a class="btn" href="index.html">Volver al inicio</a>
                 </div>
             </div>
@@ -58,3 +58,15 @@ function imprimirArticulos(contenedor, array) {
         }
     }
 }
+
+
+function FilterByname(data, string) {
+    return data.filter(data => data.nombre.toLowerCase().trim().includes(string.toLowerCase().trim()));
+  }
+
+  btn_carro.forEach(e => e.addEventListener("click", () => {
+    console.dir(e.id);
+    oCarro.eliminarCarro(FilterByname(carro, e.id));
+
+  }));
+
