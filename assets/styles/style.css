@@ -401,7 +401,7 @@ iframe {
 }
 
 .btn-limpiar {
-  
+
   background-color: rgb(216, 216, 216) !important;
   border: none !important;
 
@@ -418,10 +418,6 @@ iframe {
   border: none;
 }
 
-@charset "utf-8";
-*{
-box-sizing: border-box;
-}
 body {
   margin: 0;
   font-family: "Segoe UI",Arial,sans-serif;
