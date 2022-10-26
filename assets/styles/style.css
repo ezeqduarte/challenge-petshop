@@ -120,7 +120,10 @@ nav .active {
 
 /*/ footer /*/
 
+
 .footer-clean {
+  
+  margin-top: 150px;
   padding: 50px 0;
   background-color: #fff;
   color: #4b4c4d;
@@ -184,13 +187,23 @@ nav .active {
 
 /*/ arranca contact /*/
 
+.info_contact {
+    margin: 100px 0px;
+}
+
 .contact form {
 
-    width: 50%;
+    width: 40%;
 }
 
 .info_contact div img {
     width: 250px;
+}
+
+iframe {
+    border-radius: 25px !important;
+    width: 300px; 
+    height: 450px; ;
 }
 
 
@@ -199,7 +212,11 @@ nav .active {
 /*/ Small devices (landscape phones, 576px and up)/*/
 
 @media (min-width: 576px) {
-  
+    iframe {
+        border-radius: 25px !important;
+        width: 475px; 
+        height: 450px; ;
+    }
 }
 
 /*/ Medium devices (tablets, 768px and up) /*/
@@ -219,6 +236,12 @@ nav .active {
   .texto_datos {
     width: 60%;
   }
+
+  iframe {
+    border-radius: 25px !important;
+    width: 575px; 
+    height: 450px; ;
+}
 }
 
   /*/ Large devices (desktops, 992px and up) /*/
