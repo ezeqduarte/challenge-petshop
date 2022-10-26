@@ -305,9 +305,8 @@ iframe {
   .texto_datos {
     width: 33%;
   }
-<<<<<<< HEAD
+
 }
-=======
 
   input[type=range] {
     height: 33px;
@@ -393,8 +392,3 @@ iframe {
   input[type=range]:focus::-ms-fill-upper {
     background: #E8E8E8;
   }
-<<<<<<< HEAD
- 
-=======
->>>>>>> 1ab8e0c79e77fbf2f45115546301d1dc0bf9c93d
->>>>>>> b5e25b895a337fb6936d3b108bf6c8d1a1fe34f8
