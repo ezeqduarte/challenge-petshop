@@ -16,6 +16,10 @@ nav {
   z-index: 15;
 }
 
+nav a { font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+}
+
 .navbar-toggler {
   border: white 1px solid !important;
 }
@@ -79,15 +83,15 @@ nav .active {
     background-position-y: 80px, 40px;
 }
 
-.texto_datos p {
-}
+/* .texto_datos p {
+} */
 
 .datos div img {
   width: 100%;
 }
 
-.informacion_inicio {
-}
+/* .informacion_inicio {
+} */
 
 .galeria_inicio img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -95,14 +99,15 @@ nav .active {
   width: 450px;
 }
 
-.galeria_inicio {
-}
+/* .galeria_inicio {
+} */
 
 /*/ arranca juguetes /*/
 
 .card {
   width: 390px;
   height: auto;
+  border-radius: 20px;
 }
 
 .card-img-top {
