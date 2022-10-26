@@ -16,6 +16,10 @@ nav {
   z-index: 15;
 }
 
+nav a { font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+}
+
 .navbar-toggler {
   border: white 1px solid !important;
 }
