@@ -4,10 +4,12 @@ let $form = document.getElementById("formulario")
 $form.addEventListener("submit", (evento)=> {FormData(evento)})
 
 
+let datosConsulta = []
+
 
 function FormData(evento) {  
+    
 
-    evento.preventDefault()
     let raza
 
     if (evento.target[4].checked){
@@ -30,10 +32,14 @@ function FormData(evento) {
         
     }
 
-    console.log(datosUsuario);
-    localStorage.setItem('ConsultaUsuario', JSON.stringify(datosUsuario))
+    console.log(datosUsuario);  
+    datosConsulta.push(datosUsuario)
+    localStorage.setItem('datosConsulta', JSON.stringify(datosConsulta) ) 
+    evento.preventDefault() 
     swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
-    $form.reset
+    $form.reset()
+   
+    
     
 
 }
