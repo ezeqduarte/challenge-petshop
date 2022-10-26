@@ -113,27 +113,15 @@ nav .active {
   width: 250px;
 }
 
-
+.datos {
+ /* // */
+}
 
 /* .texto_datos p {
 } */
 
-.datos {
-  min-height: 90vh;
-}
-
 .datos div img {
   width: 100%;
-}
-
-.mindy {
-  min-height: 45vh;
-  background-image: url("../img/mindy2.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: -150px ;
-
-
 }
 
 /* .informacion_inicio {
@@ -142,7 +130,7 @@ nav .active {
 .galeria_inicio img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  width: 250px;
+  width: 450px;
 }
 
 /* .galeria_inicio {
@@ -150,25 +138,94 @@ nav .active {
 
 /*/ arranca juguetes /*/
 
-.card {
-  width: 390px;
-  height: auto;
-  border-radius: 5px 5px 20px 20px;
+
+  .card{
+background-color: #fdfdfd;
+padding: 5px;
+border-radius: 10px 10px 10px 10px ;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+/* box-shadow: rgb(89, 101, 114) 0px 10px 30px -10px; */
+  }
+
+.card:hover{
+transition-duration:  400ms;
+  box-shadow: rgb(89, 101, 114) 0px 10px 30px -10px;
 }
 
-.card-img-top {
-  height: 60%;
+hr{ border: 1px solid rgba(194, 187, 189, 0.856);
+  border-radius: 5px;}
+
+.card img {
+  height: 200px;
+  width: 100%;
+  border: #d1d1d152 1px solid;
+  border-radius: 10px 10px 5px 5px;
 }
 
-.card-body {
-  height: 50%;
+
+.caja{width: 100%;
+height: 20vh; 
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
 
-.barraStock {
-  border-radius: 5px 5px 0px 0px;
+.barraBusquedaCaja{
+  width: 25%;
+  display: flex;
+  justify-content: start;
+
+  height: 20px;
+}
+
+.btn{
+  background-color: #384f72;
+  border: 0px;
+}
+
+.btn:hover{
+  background-color: #d15171 !important;
+  transition-duration: 500ms !important;
+}
+
+.card h5 {
+  font-size: 15px;
+  font-weight: 400;
   font-family: "DM Sans", sans-serif;
-  background-color: rgb(202, 26, 70) !important;
-  font-size: 12px;
+  
+}
+
+.textoCard{
+  display: flex;
+  justify-content: space-evenly;
+  height: 35px;
+  width: 250px;
+
+  
+  
+
+}
+
+.barraBusqueda{
+  width: 350px;
+  border-radius: 200px;
+  border: 1px solid rgb(201, 199, 199);
+  box-shadow: rgba(170, 172, 175, 0.3) 0px 0px 0px 1px;
+}
+
+::placeholder{
+  color: #30302d;
+  opacity: 0.320;
+}
+.barraStockConStock{
+  background-color: #ffffff;
+  height: 20px;
+}
+
+.barraStock{
+  background-color: #d15171 !important;
+  border-radius: 10px 10px 0px 0px ;
 }
 
 /*/ footer /*/
@@ -311,7 +368,10 @@ iframe {
 @media (min-width: 1400px) {
   .texto_datos {
     width: 33%;
-  }}
+  }
+}
+
+.p-2{font-family: "DM Sans", sans-serif;;}
 
   input[type=range] {
     height: 33px;
@@ -326,29 +386,31 @@ iframe {
     height: 10px;
     cursor: pointer;
     box-shadow: 0px 0px 1px #50555C;
-    background: #E8E8E8;
+    background: #48d8e2;
     border-radius: 15px;
     border: 0px solid #FFFFFF;
   }
   input[type=range]::-webkit-slider-thumb {
     box-shadow: 0px 0px 0px #FFFFFF;
-    border: 0px solid #FFFFFF;
+    border: 0px solid #30302d;
     height: 27px;
     width: 15px;
     border-radius: 20px;
-    background: #33F4F4;
+    background: #fffcfc;
+    box-shadow: rgba(226, 227, 228, 0.3) 0px 0px 0px 3px;
     cursor: pointer;
     margin-top: -8.5px;
+    
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #E8E8E8;
+    background: #1d1c1c;
   }
   input[type=range]::-moz-range-track {
     width: 100%;
     height: 10px;
     cursor: pointer;
     box-shadow: 0px 0px 1px #50555C;
-    background: #E8E8E8;
+    background: #313030;
     border-radius: 15px;
     border: 0px solid #FFFFFF;
   }
@@ -358,7 +420,7 @@ iframe {
     height: 27px;
     width: 15px;
     border-radius: 20px;
-    background: #33F4F4;
+    background: #dfb355;
     cursor: pointer;
   }
   input[type=range]::-ms-track {
@@ -370,8 +432,8 @@ iframe {
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: #E8E8E8;
-    border: 0px solid #FFFFFF;
+    background: #b92f2f;
+    border: 0px solid #b12b2b;
     border-radius: 30px;
     box-shadow: 0px 0px 1px #50555C;
   }
@@ -388,7 +450,7 @@ iframe {
     height: 27px;
     width: 15px;
     border-radius: 20px;
-    background: #33F4F4;
+    background: #dfb355;
     cursor: pointer;
   }
   input[type=range]:focus::-ms-fill-lower {
@@ -397,3 +459,4 @@ iframe {
   input[type=range]:focus::-ms-fill-upper {
     background: #E8E8E8;
   }
+

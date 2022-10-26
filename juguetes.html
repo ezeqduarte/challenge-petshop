@@ -70,18 +70,19 @@
 
         <div class="productos d-flex flex-wrap justify-content-around align-items-center">
 
+            <div class="caja">
             <div class="d-flex flex-wrap">
                 <div class="w-100 d-flex justify-content-start align-items-center">
-                    <span class="p-2"> Precio Minimo</span><input type="range" class="form-range w-50 p-2" min="0" max="2000" step="1" value="0" id="customRangeMin">
-                    <input class="w-25" id="js-searchMin" type="search"></div>
-                <div class="w-100 d-flex justify-content-start align-items-center">
-                    <span class="p-2"> Precio Maximo</span><input type="range" class="form-range w-50 p-2" min="0" max="2000" step="1" value="2000" id="customRangeMax">
-                    <input class="w-25" id="js-searchMax" type="search" ></div></div>
+                    <span class="p-2"> Precio Min.</span><input type="range" class="form-range w-50" min="0" max="1000" step="50" value="0" id="customRangeMin"><span class="p-2" id="valueRangeMin"></span></div>
+                <div class="w-100 d-flex justify-content-start align-items-center"">
+                    <span class="p-2"> Precio Max.</span><input type="range" class="form-range w-50" min="0" max="1000" step="50" value="1000" id="customRangeMax"><span class="p-2" id="valueRangeMax"></span></div>
             </div>
+            <div class="barraBusquedaCaja">
+                <input class="barraBusqueda p-3" id="js-search" type="search" placeholder="Ingresa el nombre del producto">
+            </div>
+        </div>
             
-            <div class="search d-flex justify-content-center w-100">
-                <input class="w-25" id="js-search" type="search">
-            </div>
+            
 
             <div id="contenedor_cards" class="cards w-100 d-flex flex-wrap justify-content-center gap-5 mt-5">
               
