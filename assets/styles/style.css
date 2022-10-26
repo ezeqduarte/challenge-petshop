@@ -16,7 +16,8 @@ nav {
   z-index: 15;
 }
 
-nav a { font-family: 'DM Sans', sans-serif;
+nav a {
+  font-family: "DM Sans", sans-serif;
   font-weight: 100;
 }
 
@@ -38,9 +39,12 @@ nav .active {
 }
 
 .navDetails {
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(33,115,130,1) 1.4%, rgba(35,39,124,1) 90% ) !important;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(33, 115, 130, 1) 1.4%,
+    rgba(35, 39, 124, 1) 90%
+  ) !important;
 }
-
 
 .fondo_negro {
   background-color: rgba(0, 0, 0, 0.486);
@@ -49,6 +53,7 @@ nav .active {
   width: 100%;
   position: absolute;
 }
+
 
 
 .header_inicio {
@@ -62,6 +67,30 @@ nav .active {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.61) 0px -5px 30px;
 }
+
+
+.header_inicioFarmacia {
+  background-image: url(../img/fondofotodniperro.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.61) 0px -5px 30px;
+}
+
+
+.header_inicioJuguetes { background-image: url(../img/fondomostazaperro.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.61) 0px -5px 30px;}
+
+
+
+
 
 .header_inicio h2 {
   font-size: 3.5rem !important;
@@ -85,12 +114,12 @@ nav .active {
 }
 
 .datos {
-    
-    background-image: url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png), url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png);
-    background-size: 5%;
-    background-repeat: no-repeat;
-    background-position-x: 50px, 150px;
-    background-position-y: 80px, 40px;
+  background-image: url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png),
+    url(https://img.icons8.com/fluency-systems-filled/344/dog-footprint.png);
+  background-size: 5%;
+  background-repeat: no-repeat;
+  background-position-x: 50px, 150px;
+  background-position-y: 80px, 40px;
 }
 
 /* .texto_datos p {
@@ -117,7 +146,7 @@ nav .active {
 .card {
   width: 390px;
   height: auto;
- border-radius:  5px 5px 20px 20px;
+  border-radius: 5px 5px 20px 20px;
 }
 
 .card-img-top {
@@ -129,17 +158,15 @@ nav .active {
 }
 
 .barraStock {
-  border-radius:  5px 5px 0px 0px;
-  font-family: 'DM Sans', sans-serif;
+  border-radius: 5px 5px 0px 0px;
+  font-family: "DM Sans", sans-serif;
   background-color: rgb(202, 26, 70) !important;
   font-size: 12px;
 }
 
 /*/ footer /*/
 
-
 .footer-clean {
-  
   margin-top: 150px;
   padding: 50px 0;
   background-color: #fff;
@@ -201,39 +228,36 @@ nav .active {
   opacity: 0.6;
 }
 
-
 /*/ arranca contact /*/
 
 .info_contact {
-    margin: 100px 0px;
+  margin: 100px 0px;
 }
 
 .contact form {
-
-    width: 40%;
+  width: 40%;
 }
 
 .info_contact div img {
-    width: 250px;
+  width: 250px;
 }
 
 iframe {
-    border-radius: 25px !important;
-    width: 300px; 
-    height: 450px; ;
+  border-radius: 25px !important;
+  width: 300px;
+  height: 450px;
 }
-
 
 /*/ ARRANCA MEDIA QUERY /*/
 
 /*/ Small devices (landscape phones, 576px and up)/*/
 
 @media (min-width: 576px) {
-    iframe {
-        border-radius: 25px !important;
-        width: 475px; 
-        height: 450px; ;
-    }
+  iframe {
+    border-radius: 25px !important;
+    width: 475px;
+    height: 450px;
+  }
 }
 
 /*/ Medium devices (tablets, 768px and up) /*/
@@ -256,35 +280,34 @@ iframe {
 
   iframe {
     border-radius: 25px !important;
-    width: 575px; 
-    height: 450px; ;
+    width: 575px;
+    height: 450px;
+  }
 }
+
+/*/ Large devices (desktops, 992px and up) /*/
+@media (min-width: 992px) {
+  .footer-clean .item.social > a {
+    margin-top: 40px;
+  }
+
+  .footer-clean .item.social > a {
+    margin-top: 40px;
+  }
 }
 
-  /*/ Large devices (desktops, 992px and up) /*/
-  @media (min-width: 992px) {
-    .footer-clean .item.social > a {
-      margin-top: 40px;
-    }
+/*/ X-Large devices (large desktops, 1200px and up) /*/
+@media (min-width: 1200px) {
+}
 
-    .footer-clean .item.social > a {
-      margin-top: 40px;
-    }
+/*/ XX-Large devices (larger desktops, 1400px and up) /*/
+@media (min-width: 1400px) {
+  .texto_datos {
+    width: 33%;
   }
-
-  /*/ X-Large devices (large desktops, 1200px and up) /*/
-  @media (min-width: 1200px) {
-    
-  }
-
-  /*/ XX-Large devices (larger desktops, 1400px and up) /*/
-  @media (min-width: 1400px) {
-
-    .texto_datos {
-        width: 33%;
-    }
-    
-  }
+<<<<<<< HEAD
+}
+=======
 
   input[type=range] {
     height: 33px;
@@ -370,4 +393,8 @@ iframe {
   input[type=range]:focus::-ms-fill-upper {
     background: #E8E8E8;
   }
+<<<<<<< HEAD
  
+=======
+>>>>>>> 1ab8e0c79e77fbf2f45115546301d1dc0bf9c93d
+>>>>>>> b5e25b895a337fb6936d3b108bf6c8d1a1fe34f8

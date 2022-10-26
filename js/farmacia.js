@@ -9,9 +9,8 @@ async function getData() {
         
         let infoApi = data.response
 
-        let articles = infoApi.filter(article=> article.tipo === "Medicamento") 
-        let articlesOrdernados = [...articles].sort((a,b)=> a.stock - b.stock)
-        /* console.log(articlesOrdernados); */
+        let articles = [...infoApi].filter(article=> article.tipo === "Medicamento").sort((a,b)=> a.stock - b.stock) 
+               
 
         imprimirArticulos($container_cards, articles)
 

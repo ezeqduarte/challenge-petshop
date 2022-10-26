@@ -7,8 +7,11 @@ async function getData() {
 
     let infoApi = data.response;
 
-    let articles = infoApi.filter((article) => article.tipo === "Juguete");
-  /*   console.log(articles); */
+    let articles = [...infoApi].filter((article) => article.tipo === "Juguete").sort((a,b)=> a.stock - b.stock);
+
+    console.log(articles);
+    console.log(infoApi);
+  
 
     imprimirArticulos($container_cards,articles);
 
