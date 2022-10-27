@@ -8,20 +8,20 @@ export class Carro {
     agregaCarro(producto) {
         let carro = JSON.parse(localStorage.getItem('carro'));
         if (carro) {
-           console.log("en la funcion");
-              if (carro.length === 0) {
-                  console.log("adding string");
-                  Object.assign(...producto, { "encarro": 1 });
-                  carro.push(...producto);
-                  localStorage.setItem("carro", JSON.stringify(carro));
-                  return;
-              } 
+            console.log("en la funcion");
+            if (carro.length === 0) {
+                console.log("adding string");
+                Object.assign(...producto, { "encarro": 1 });
+                carro.push(...producto);
+                localStorage.setItem("carro", JSON.stringify(carro));
+                return;
+            }
             carro.forEach((e, i) => {
                 if (carro.some(element => element.nombre === producto[0].nombre)) {
 
                     if (carro[i].encarro >= producto[0].stock) {
                         console.log("lo enconrto al max");
-                        swal("No quedan mas articulos en stock","Por cualquier inconveniente contactese con nosotros", "error");
+                        swal("No quedan mas articulos en stock", "Por cualquier inconveniente contactese con nosotros", "error");
                         return;
                     }
                     else if (e.nombre === producto[0].nombre) {
@@ -59,17 +59,21 @@ export class Carro {
         let carro = JSON.parse(localStorage.getItem('carro'));
         if (carro.some(element => element.nombre === producto[0].nombre)) {
             carro.forEach((e, i) => {
+                if (e.nombre === producto[0].nombre) {
+                    if (e.encarro === 1) {
+                        carro.splice(i, 1);
+                        localStorage.setItem("carro", JSON.stringify(carro));
+                        return;
+                    }
+                    else {
+                        carro[i].encarro -= 1;
+                        localStorage.setItem("carro", JSON.stringify(carro));
+                        window.location.reload();
+                        return;
 
-                if (e.encarro === 1) {
-                    carro.splice(i, 1);
-                    localStorage.setItem("carro", JSON.stringify(carro));
-                    return;
+                    }
                 }
-                else {
-                    carro[i].encarro--;
-                    localStorage.setItem("carro", JSON.stringify(carro));
-                    return;
-                }
+
             });
         }
         else {
@@ -85,5 +89,5 @@ export class Carro {
         localStorage.clear();
     }
 
-    
+
 }
