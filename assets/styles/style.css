@@ -438,6 +438,96 @@ input {
   min-height: 30vh !important;
 }
 
+/* From uiverse.io by @david-mohseni */
+
+
+.flip {
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); 
+  width: 290px;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: 3s ease;
+  border-radius: 20px;
+}
+
+.flip:hover {
+  transform: rotateY(180deg);
+}
+/* Content */
+.flip .content {
+  transform-style: preserve-3d;
+}
+
+.flip img {
+  border-radius: 16px 16px 8px 8px;
+  margin-top: 6px;
+}
+
+.flip .back, .flip .front {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5px;
+  gap: 16px;
+}
+
+.flip .back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.flip h2,
+.flip p {
+  transform: translateZ(90px);
+  text-align: center;
+}
+
+.flip h2 {
+  font-weight: 200;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.flip p {
+  font-size: 16px;
+  color: black;
+  line-height: 1.6em;
+}
+
+.flip::before,
+.flip::after {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: 20px;
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg)translateZ(1px);
+}
+
+
+.flip::before {
+  border-radius: 20px;
+  transform: none;
+  background-image: linear-gradient(rgb(13, 3, 103)et, #48d8e2);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* TERMINA CARD */
 .btn-limpiar {
 
   background-color: rgb(216, 216, 216) !important;
