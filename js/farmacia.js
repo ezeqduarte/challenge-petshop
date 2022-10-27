@@ -102,7 +102,7 @@ function imprimirArticulos(contenedor, array) {
         <p class="barraStock text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
             <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
             <div class="card-body d-flex flex-column align-items-around justify-content-center">   
-            <hr> 
+            
             <div class="textoCard flex-column">
             <h5 class="card-title text-center">${objeto.nombre}</h5>
             <h5 class="card-title text-center">$${objeto.precio}</h5>     
@@ -122,7 +122,7 @@ function imprimirArticulos(contenedor, array) {
             <div><p class="barraStockConStock text-center text-white"></p>
                 <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
                 <div class="card-body d-flex flex-column align-items-around justify-content-center">  
-                <hr>
+             
                            
                         <div class="textoCard flex-column">
           <h5 class="card-title text-center">${objeto.nombre}</h5>
