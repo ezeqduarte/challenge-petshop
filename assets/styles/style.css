@@ -237,6 +237,14 @@ border-radius: 5px;
 
 }
 
+.btn-sacarCarro{
+  
+  border-radius: 180px !important;
+  padding: 10px !important;
+  background-color: #e6260d !important;
+  
+}
+
 .btn-cantidadCarro {
 
   border-radius: 180px !important;
