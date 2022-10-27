@@ -1,8 +1,5 @@
 import { Carro } from './carro.js'
-let oCarro = new Carro()
-
-let valueRangeMin;
-let valueRangeMax;
+let oCarro = new Carro();
 let arrayFiltroPorRango;
 let btn_carro
 let articles
@@ -23,7 +20,8 @@ async function getData() {
         let carro = localStorage.getItem('carro')
 
         imprimirArticulos($container_cards, articles)
-        filtrosCruzados ($container_cards,articles)
+
+        filtrosCruzados($container_cards, articles)
         btn_carro = document.querySelectorAll(`[class^="btn btn-primary"]`);
     } catch (error) {
 
@@ -73,59 +71,90 @@ function filtrosCruzados(contenedor, articles) {
         imprimirArticulos(contenedor, arrayFiltroPorPalabra);
     }
 
-    actulizarValueRange()
+    inputSearchMinValue.value = inputRangeMin.value
+    inputSearchMaxValue.value = inputRangeMax.value
+
 }
 
 
-valueRangeMin = document.getElementById("valueRangeMin")
-valueRangeMax = document.getElementById("valueRangeMax")
+let inputSearchMinValue = document.getElementById("customRangeMin")
+inputSearchMinValue.addEventListener("input", actualizarRangeMin)
 
-function actulizarValueRange() {
-    valueRangeMin.innerHTML = `$ ${Number(inputRangeMin.value)}`
-    valueRangeMax.innerHTML = `$ ${Number(inputRangeMax.value)}`
-
-  }
-
-
-
-  function imprimirArticulos(contenedor, array) {
-    for (const objeto of array) {
-      if (objeto.stock < 5) {
-        contenedor.innerHTML += `
-      
-      <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
-      <p class="barraStock text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
-          <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
-          <div class="card-body d-flex flex-column align-items-around justify-content-center">                
-                  <h5 class="card-title text-center">${objeto.nombre}</h5>
-                  <h5 class="card-title text-center">$${objeto.precio}</h5>                
-                  </div>
-                  <div class="botones d-flex mb-3 flex-row justify-content-evenly">
-                      <a href="#" class="btn btn-primary">Detalles</a>
-                      <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                  </div>
-      </article>
-      
-      `;
-      } else {
-        contenedor.innerHTML += `
-      
-          <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
-              <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
-              <div class="card-body d-flex flex-column align-items-around justify-content-center">                
-                      <h5 class="card-title text-center">${objeto.nombre}</h5>
-                      <h5 class="card-title text-center">$${objeto.precio}</h5>                
-                      </div>
-                      <div class="botones d-flex mb-3 flex-row justify-content-evenly">
-                          <a href="./detalles.html" class="btn btn-primary">Detalles</a>
-                          <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                      </div>
-          </article>
-          
-          `;
-      }
+function actualizarRangeMin() {
+    if (inputSearchMinValue.value === "") {
+        inputRangeMin.value = 0
     }
-  }
+    else {
+        inputRangeMin.value = inputSearchMinValue.value
+    }
+    console.log(inputSearchMinValue);
+    getData()
+}
+
+ let inputSearchMaxValue = document.getElementById("customRangeMax")
+inputSearchMaxValue.addEventListener("input", actualizarRangeMax)
+
+function actualizarRangeMax() {
+    if (inputSearchMaxValue.value === "") {
+        inputRangeMax.value = 0
+    }
+    else {
+        inputRangeMax.value = inputSearchMaxValue.value
+    }
+    getData()
+}
+
+
+
+function imprimirArticulos(contenedor, array) {
+
+    for (const objeto of array) {
+        if (objeto.stock < 3) {
+            contenedor.innerHTML += `
+        
+        <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
+        <p class="barraStock text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
+            <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
+            <div class="card-body d-flex flex-column align-items-around justify-content-center">   
+            <hr> 
+            <div class="textoCard">
+            <h5 class="card-title text-center">${objeto.nombre}</h5>
+            <h5 class="card-title text-center">$${objeto.precio}</h5>     
+           </div>           
+                    </div>
+                    <div class="botones d-flex mb-3 flex-row justify-content-evenly">
+                        <a href="#" class="btn btn-primary">Detalles</a>
+                        <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
+                    </div>
+        </article>
+        
+        `
+        } else {
+            contenedor.innerHTML += `
+        
+            <article class="card d-flex flex-column align-items-around" style="width: 18rem;">
+            <div><p class="barraStockConStock text-center text-white"></p>
+                <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
+                <div class="card-body d-flex flex-column align-items-around justify-content-center">  
+                <hr>
+                           
+                        <div class="textoCard">
+          <h5 class="card-title text-center">${objeto.nombre}</h5>
+          <h5 class="card-title text-center">$${objeto.precio}</h5>     
+         </div>             
+                        </div>
+                        <div class="botones d-flex mb-3 flex-row justify-content-evenly">
+                            <a href="#" class="btn btn-primary">Detalles</a>
+                            <a   class="btn btn-primary"id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
+                        </div>
+            </article>
+            
+            `
+
+        }
+    }
+
+}
 
 function FilterByname(data, string) {
     return data.filter(data => data.nombre.toLowerCase().trim().includes(string.toLowerCase().trim()));

@@ -1,6 +1,5 @@
 import { Carro } from './carro.js'
-let oCarro = new Carro()
-
+let oCarro = new Carro();
 let valueRangeMin;
 let valueRangeMax;
 let arrayFiltroPorRango;
@@ -16,15 +15,18 @@ async function getData() {
 
     let infoApi = data.response;
 
-    let articles = [...infoApi].filter((article) => article.tipo === "Juguete").sort((a,b)=> a.stock - b.stock);
-
+    articles = [...infoApi].filter((article) => article.tipo === "Juguete").sort((a, b) => a.stock - b.stock);
+    let carro = localStorage.getItem('carro')
     console.log(articles);
     console.log(infoApi);
-  
 
-    imprimirArticulos($container_cards,articles);
+    console.dir(carro);
+    imprimirArticulos($container_cards, articles);
 
-    filtrosCruzados ($container_cards,articles)
+    filtrosCruzados($container_cards, articles)
+
+    btn_carro = document.querySelectorAll(`[class^="btn btn-primary"]`);
+    console.dir(btn_carro);
   } catch (error) {
     console.log(error);
   }
@@ -40,44 +42,43 @@ function filterByText(juguetes) {
   if (inputSearch.value === 0) {
     filterJuguetes = juguetes;
   }
-    return filterJuguetes;
+  return filterJuguetes;
 }
 
 const inputRangeMin = document.getElementById("customRangeMin")
 const inputRangeMax = document.getElementById("customRangeMax")
-inputRangeMin.addEventListener("input",getData)
-inputRangeMax.addEventListener("input",getData)
+inputRangeMin.addEventListener("input", getData)
+inputRangeMax.addEventListener("input", getData)
+
 
 
 function filterByRange(juguetes) {
-    let filterJuguetes = juguetes.filter((juguete) =>
-    (juguete.precio>= Number(inputRangeMin.value) &&  juguete.precio <=Number(inputRangeMax.value)));
-    return filterJuguetes;
+  let filterJuguetes = juguetes.filter((juguete) =>
+    (juguete.precio >= Number(inputRangeMin.value) && juguete.precio <= Number(inputRangeMax.value)));
+  return filterJuguetes;
+}
+
+
+function filtrosCruzados(contenedor, articles) {
+  arrayFiltroPorRango = filterByRange(articles)
+  arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
+
+  if (arrayFiltroPorPalabra.length === 0) {
+    contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun juguete</h2>`;
+  } else {
+    contenedor.innerHTML = ``;
+    imprimirArticulos(contenedor, arrayFiltroPorPalabra);
   }
-
-
-function filtrosCruzados (contenedor,articles){
-    arrayFiltroPorRango = filterByRange(articles)
-    arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
-
-    if (arrayFiltroPorPalabra.length === 0) {
-        contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun juguete</h2>`;
-      } else {
-        contenedor.innerHTML = ``;
-        imprimirArticulos(contenedor,arrayFiltroPorPalabra);
-      }            
-      actulizarValueRange()
+  actulizarValueRange()
 }
 valueRangeMin = document.getElementById("valueRangeMin")
 valueRangeMax = document.getElementById("valueRangeMax")
 
 function actulizarValueRange() {
-    valueRangeMin.innerHTML = `$ ${Number(inputRangeMin.value)}`
-    valueRangeMax.innerHTML = `$ ${Number(inputRangeMax.value)}`
+  valueRangeMin.innerHTML = `$ ${Number(inputRangeMin.value)}`
+  valueRangeMax.innerHTML = `$ ${Number(inputRangeMax.value)}`
 
-  }
-
-
+}
 
 function imprimirArticulos(contenedor, array) {
   for (const objeto of array) {
@@ -93,7 +94,7 @@ function imprimirArticulos(contenedor, array) {
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                     <a href="#" class="btn btn-primary">Detalles</a>
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <a    class="btn btn-primary"  id="${objeto.nombre}" username="${objeto.precio}"><i class="large material-icons">add_shopping_cart</i></a>
                 </div>
     </article>
     
@@ -109,7 +110,8 @@ function imprimirArticulos(contenedor, array) {
                     </div>
                     <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                         <a href="./detalles.html" class="btn btn-primary">Detalles</a>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a    class="btn btn-primary"  id="${objeto.nombre}" username="${objeto.precio}"><i class="large material-icons">add_shopping_cart</i></a>
+                       
                     </div>
         </article>
         
@@ -119,6 +121,7 @@ function imprimirArticulos(contenedor, array) {
 }
 
 getData();
+
 
 function FilterByname(data, string) {
   return data.filter(data => data.nombre.toLowerCase().trim().includes(string.toLowerCase().trim()));
@@ -133,3 +136,6 @@ setTimeout(() => {
   }));
 
 }, 1000);
+
+
+
