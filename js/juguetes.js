@@ -6,7 +6,6 @@ let arrayFiltroPorRango;
 let btn_carro
 let articles
 let arrayFiltroPorPalabra;
-
 let $container_cards = document.getElementById("contenedor_cards");
 
 async function getData() {
