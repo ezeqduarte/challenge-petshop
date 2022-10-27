@@ -484,9 +484,10 @@ h2 {
   padding: 48px
 }
 .btn {
-  display: inline-block;
+  display: flex;
+ /*  display: inline-block; */
   margin-right: 4px;
-  padding: 14px;
+  padding: 5px 15px;
   border-radius: 5px;
   margin-top: 18px;
 }

@@ -112,7 +112,7 @@ function imprimirArticulos(contenedor, array) {
           <div class="card-body d-flex flex-column align-items-around justify-content-center">  
           <hr>
                      
-                  <div class="textoCard">
+                  <div class="textoCard flex-column">
     <h5 class="card-title text-center">${objeto.nombre}</h5>
     <h5 class="card-title text-center">$${objeto.precio}</h5>     
    </div>             
