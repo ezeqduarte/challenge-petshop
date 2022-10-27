@@ -7,71 +7,76 @@ let arrayFiltroPorRango;
 let btn_carro
 let articles
 let arrayFiltroPorPalabra;
-
 let $container_cards = document.getElementById("contenedor_cards")
 
+
 async function getData() {
-    
+
     try {
-    
+
         let data = await fetch("https://apipetshop.herokuapp.com/api/articulos")
         data = await data.json()
-        
+
         let infoApi = data.response
 
-        let articles = [...infoApi].filter(article=> article.tipo === "Medicamento").sort((a,b)=> a.stock - b.stock) 
+        articles = [...infoApi].filter(article => article.tipo === "Medicamento").sort((a, b) => a.stock - b.stock)
         let carro = localStorage.getItem('carro')
-        console.log(articles);
+
         imprimirArticulos($container_cards, articles)
         filtrosCruzados ($container_cards,articles)
         btn_carro = document.querySelectorAll(`[class^="btn btn-primary"]`);
     } catch (error) {
-        
+
         console.log(error);
 
     }
 
 }
 
+getData()
+
+
 const inputSearch = document.getElementById("js-search");
 inputSearch.addEventListener("input", getData);
 
 function filterByText(medicamento) {
-  let filterMedicamento = medicamento.filter((medicamento) =>
-    medicamento.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
-  );
-  if (inputSearch.value === 0) {
-    filterMedicamento = medicamento;
-  }
+    let filterMedicamento = medicamento.filter((medicamento) =>
+        medicamento.nombre.toLowerCase().includes(inputSearch.value.toLowerCase())
+    );
+    if (inputSearch.value === 0) {
+        filterMedicamento = medicamento;
+    }
     return filterMedicamento;
 }
 
 const inputRangeMin = document.getElementById("customRangeMin")
 const inputRangeMax = document.getElementById("customRangeMax")
-inputRangeMin.addEventListener("input",getData)
-inputRangeMax.addEventListener("input",getData)
+inputRangeMin.addEventListener("input", getData)
+inputRangeMax.addEventListener("input", getData)
 
 
 function filterByRange(medicamentos) {
-    let filterMedicamentos = medicamentos.filter((medicamento)=>
-    (medicamento.precio>= Number(inputRangeMin.value) &&  medicamento.precio <=Number(inputRangeMax.value)
+    let filterMedicamentos = medicamentos.filter((medicamento) =>
+    (medicamento.precio >= Number(inputRangeMin.value) && medicamento.precio <= Number(inputRangeMax.value)
     ));
     return filterMedicamentos;
-  }
+}
 
-  function filtrosCruzados (contenedor,articles){
+function filtrosCruzados(contenedor, articles) {
     arrayFiltroPorRango = filterByRange(articles)
     arrayFiltroPorPalabra = filterByText(arrayFiltroPorRango)
 
     if (arrayFiltroPorPalabra.length === 0) {
         contenedor.innerHTML = `<h2 class="text-black">No se encontro ningun Medicamento</h2>`;
-      } else {
+    } else {
         contenedor.innerHTML = ``;
-        imprimirArticulos(contenedor,arrayFiltroPorPalabra);
-      }
-      actulizarValueRange()
+        imprimirArticulos(contenedor, arrayFiltroPorPalabra);
+    }
 
+    actulizarValueRange()
 }
+
+
 valueRangeMin = document.getElementById("valueRangeMin")
 valueRangeMax = document.getElementById("valueRangeMax")
 
@@ -80,6 +85,7 @@ function actulizarValueRange() {
     valueRangeMax.innerHTML = `$ ${Number(inputRangeMax.value)}`
 
   }
+
 
 
   function imprimirArticulos(contenedor, array) {
@@ -121,19 +127,16 @@ function actulizarValueRange() {
     }
   }
 
-getData()
-
 function FilterByname(data, string) {
     return data.filter(data => data.nombre.toLowerCase().trim().includes(string.toLowerCase().trim()));
-  }
-  
-  
-  setTimeout(() => {
+}
+
+
+setTimeout(() => {
     btn_carro.forEach(e => e.addEventListener("click", () => {
-      console.dir(e.id);
-      oCarro.agregaCarro(FilterByname(articles, e.id));
-  
+        console.dir(e.id);
+        oCarro.agregaCarro(FilterByname(articles, e.id));
+
     }));
-  
-  }, 1000);
-  
+
+}, 1000);
