@@ -6,6 +6,7 @@ let $maincarrito = document.getElementById("main_carrito")
 let $btnCompra = document.getElementById("comprarcarro")
 
 imprimirArticulos(container_cards,carro);
+
 let btn_carro = document.querySelectorAll(`[class^="btn eliminar"]`);
 
 
@@ -87,10 +88,10 @@ function imprimirArticulos(contenedor, array) {
     
 }
 
-$btnCompra.addEventListener('click', (evento)=> {realizarComprar(evento)})
+$btnCompra.addEventListener("click", realizarComprar())
 
-function realizarComprar(evento) {       
+function realizarComprar() {       
 
-    swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
+    alert('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
 
 }

@@ -84,4 +84,6 @@ export class Carro {
     eraseCarro() {
         localStorage.clear();
     }
+
+    
 }
