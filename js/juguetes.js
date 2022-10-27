@@ -4,6 +4,7 @@ let valueRangeMin;
 let valueRangeMax;
 let arrayFiltroPorRango;
 let btn_carro
+let btn_agregar
 let articles
 let arrayFiltroPorPalabra;
 let $container_cards = document.getElementById("contenedor_cards");
@@ -24,7 +25,7 @@ async function getData() {
     imprimirArticulos($container_cards, articles);
 
     filtrosCruzados($container_cards, articles)
-
+    btn_agregar = document.querySelectorAll(`[class^="agregar-carro"]`);
     btn_carro = document.querySelectorAll(`[class^="btn btn-primary"]`);
     console.dir(btn_carro);
   } catch (error) {
@@ -104,7 +105,8 @@ function imprimirArticulos(contenedor, array) {
                     </div>
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
-                <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>                
+                <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
+                <button class="agregar-carro" id ="${objeto.nombre}">borralo\uD83D\uDE08</button>                
             </div>
         </article>
       
@@ -132,6 +134,7 @@ function imprimirArticulos(contenedor, array) {
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                 <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
+                <button class="agregar-carro" id ="${objeto.nombre}">borralo\uD83D\uDE08</button>
             </div>
         </article>
       
@@ -141,6 +144,8 @@ function imprimirArticulos(contenedor, array) {
 }
 
 getData();
+
+
 
 
 function FilterByname(data, string) {
@@ -154,7 +159,10 @@ setTimeout(() => {
     oCarro.agregaCarro(FilterByname(articles, e.id));
 
   }));
-
+btn_agregar.forEach(e => e.addEventListener("click", () => {
+  console.dir(e.id);
+  oCarro.eliminarCarro(FilterByname(articles, e.id));
+}));
 }, 1000);
 
 
