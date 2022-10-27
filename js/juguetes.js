@@ -106,7 +106,7 @@ function imprimirArticulos(contenedor, array) {
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                 <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
-                <button class="agregar-carro btn btn-primary" id ="${objeto.nombre}"><i class="large material-icons">remove_shopping_cart </i></button>               
+                <a class="agregar-carro sacarcarro btnSacar btn-primary" id ="${objeto.nombre}"><i class="large material-icons">remove_shopping_cart </i></a>               
             </div>
         </article>
       
@@ -134,7 +134,7 @@ function imprimirArticulos(contenedor, array) {
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                 <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
-                <button class="agregar-carro sacarcarro btn btn-primary" id ="${objeto.nombre}"><i class="large material-icons">remove_shopping_cart </i></button>
+                <a class="agregar-carro sacarcarro btnSacar btn-primary" id ="${objeto.nombre}"><i class="large material-icons">remove_shopping_cart </i></a>
             </div>
         </article>
       

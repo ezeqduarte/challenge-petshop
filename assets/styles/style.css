@@ -299,6 +299,23 @@ flex-direction: column;
   border-radius: 45px !important;
 }
 
+.btnSacar {
+  background-color: #bd5c5c !important;
+  border: 0px;
+  padding: 15px !important;
+  border-radius: 45px !important;
+  margin-top: 17px;
+  color: white;
+}
+
+.btnSacar:hover{
+
+  color: white !important;
+  background-color: #e63b3bc7 !important;
+  cursor:pointer;
+
+}
+
 
 
 
