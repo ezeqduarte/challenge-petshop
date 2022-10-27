@@ -6,7 +6,7 @@ export class Carro {
 
 
     agregaCarro(producto) {
-        
+
         let carro = JSON.parse(localStorage.getItem('carro'));
         if (carro) {
             console.log("en la funcion");
@@ -23,8 +23,8 @@ export class Carro {
                     if (carro[i].encarro >= producto[0].stock) {
                         console.log("lo enconrto al max");
                         swal("No quedan mas articulos en stock", "Por cualquier inconveniente contactese con nosotros", "error");
-                       
-                       return;
+                      
+                        return;
                     }
                     else if (e.nombre === producto[0].nombre) {
                         carro[i].encarro += 1;
@@ -81,15 +81,45 @@ export class Carro {
         else {
             window.location.reload();
         }
-
-
-
-
     }
 
-    eraseCarro() {
-        localStorage.clear();
+    borrarProducto(producto) {
+        let carro = JSON.parse(localStorage.getItem('carro'));
+        if (carro.some(element => element.nombre === producto[0].nombre)) {
+            carro.forEach((e, i) => {
+                if (e.nombre === producto[0].nombre) {
+                    carro.splice(i, 1);
+                    localStorage.setItem("carro", JSON.stringify(carro));
+                    window.location.reload();
+                    return;
+
+                }
+            });
+        }
     }
+
+    incrementarProducto(producto) {
+        let carro = JSON.parse(localStorage.getItem('carro'));
+        if (carro.some(element => element.nombre === producto[0].nombre)) {
+            carro.forEach((e, i) => {
+                if (e.nombre === producto[0].nombre) {
+                    carro[i].encarro+=1;
+                    localStorage.setItem("carro", JSON.stringify(carro));
+                    window.location.reload();
+                    return;
+
+                }
+            });
+        }
+    }
+
+
+
+
+
+eraseCarro() {
+    localStorage.clear();
+}
 
 
 }
