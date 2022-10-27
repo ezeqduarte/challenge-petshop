@@ -130,6 +130,10 @@ nav .active {
 
 }
 
+#main_carrito {
+  min-height: 70vh !important;
+}
+
 
 
 

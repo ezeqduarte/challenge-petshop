@@ -29,7 +29,7 @@ function imprimirArticulos(contenedor, array) {
              if (objeto.stock < 5) {
                 contenedor.innerHTML += `
            
-                 <div class="d-flex">
+                 
                  
                          <div class="d-flex card-carrito justify-content-evenly align-items-center flex-column flex-md-row" style="position: relative;">
                          
@@ -49,13 +49,13 @@ function imprimirArticulos(contenedor, array) {
                                  <p class="w-100 text-center">Precio total: $ ${objeto.precio*objeto.encarro}</p>
                              </div>                        
                          </div>
-                     </div>
+                     
                
                `;
              } else {
                  contenedor.innerHTML += `
            
-                 <div class="d-flex">
+                
                  
                  <div class="d-flex card-carrito justify-content-evenly align-items-center flex-column flex-md-row" style="position: relative;">
                  
@@ -74,7 +74,7 @@ function imprimirArticulos(contenedor, array) {
                          <p class="w-100 text-center">Precio total: $ ${objeto.precio*objeto.encarro}</p>
                      </div>                        
                  </div>
-             </div>
+           
                
                `;
              }
@@ -100,15 +100,42 @@ $btnLimpiar.addEventListener("click", limpiarCarro)
 
 
 
-function realizarCompra() {      
-
-    swal('Su compra fue realizada con exito', 'Gracias por confiar en nosotros', 'success');
+function realizarCompra() { 
+    
+    $maincarrito.innerHTML = ""
+    $maincarrito.innerHTML += `
+    <div class="dflex justify-content-start w-100">
+        <h2 class="my-5 mx-5 "><span class="primario" >| </span>Estas a punto de finalizar tu compra</h2>
+    </div>
+    <div class="d-flex justify-content-start align-items-center flex-grow-1">
+        <h2>Tu carrito esta vacio, en la tienda podes encontrar nuestros productos.</h2>
+    </div>`    
+    localStorage.removeItem("carro")
+    swal(`Su compra fue realizada con exito`, 'Gracias por confiar en nosotros', 'success');
 
 }
 
-function limpiarCarro() {      
 
+
+
+
+function limpiarCarro() {   
+
+
+    
+    $maincarrito.innerHTML = ""
+    $maincarrito.innerHTML += `
+    <div class="dflex justify-content-start w-100">
+        <h2 class="my-5 mx-5 "><span class="primario" >| </span>Estas a punto de finalizar tu compra</h2>
+    </div>
+    <div class="d-flex justify-content-start align-items-center flex-grow-1">
+        <h2>Tu carrito esta vacio, en la tienda podes encontrar nuestros productos.</h2>
+    </div>`
+    
+    localStorage.removeItem("carro")
     swal('Limpiaste el carro con exito', 'Vuelve a la seccion de compras para recargarlo', 'success');
 
 }
+
+
 
