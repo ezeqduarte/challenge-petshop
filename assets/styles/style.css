@@ -413,6 +413,11 @@ iframe {
   height: 450px;
 }
 
+input {
+  border-radius: 7px;
+  border: solid 1px rgb(207, 204, 204) !important;
+}
+
 /*/ ARRANCA CARRITO /*/
 
 .barrastockCarrito{
