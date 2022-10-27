@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">  
     <link rel="shortcut icon" href="./assets/img/logo-favicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Carrito</title>
   </head>
   <body>
@@ -29,8 +30,8 @@
     <header>
         <div class="header_inicio header_inicioCarrito">
             <div class="fondo_negro d-flex justify-content-center flex-column align-items-center">
-                <h2 class="text-center text-white">Carrito<span class="secundario">.</span>  </h2>
-                <h5 class="text-white">Explora los articulos que seleccionaste</h5>
+                <h2 class="text-center text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">Carrito<span class="secundario">.</span>  </h2>
+                <h5 class="text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">Explora los articulos que seleccionaste</h5>
            
             </div>
             <nav class="navbar bg-transparent px-5 navbar-expand-lg p-0 ">
@@ -67,7 +68,7 @@
     </header>
     <main id="main_carrito" class="d-flex flex-column align-items-center">
         <div class="dflex justify-content-start w-100">
-            <h2 class="my-5 mx-5 "><span class="primario" >| </span>Estas a punto de finalizar tu compra</h2>
+            <h2 class="my-5 mx-5 "data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100" ><span class="primario" >| </span>Estas a punto de finalizar tu compra</h2>
         </div>
         <div id="contenedor_cards" class="cards flex-grow-1 w-100 d-flex flex-wrap justify-content-center align-items-center gap-4 mt-3">
 
@@ -126,5 +127,9 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="./js/carrito.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
   </body>
 </html>

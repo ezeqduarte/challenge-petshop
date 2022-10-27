@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo-favicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Contacto</title>
 </head>
 
@@ -22,10 +23,10 @@
     <header>
         <div class="header_inicio header_inicioContacto">
             <div class="fondo_negro d-flex flex-column justify-content-center align-items-center">
-                <h2 class="text-center text-white">
+                <h2 class="text-center text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">
                     Contacto<span class="secundario">.</span>
                 </h2>
-                <h5 class="text-white">Recibi las ultimas actualizaciones de nuestra tienda<span class="secundario">.</span></h5>
+                <h5 class="text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">Recibi las ultimas actualizaciones de nuestra tienda<span class="secundario">.</span></h5>
             </div>
             <nav class="navbar bg-transparent px-5 navbar-expand-lg p-0">
                 <div class="container-fluid my-3 d-flex justify-content-around">
@@ -62,7 +63,7 @@
 
     <main class="container contact">
         
-            <div class="info_contact justify-content-around d-flex flex-wrap">
+            <div class="info_contact justify-content-around d-flex flex-wrap " data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <img src="https://cdn-icons-gif.flaticon.com/6844/6844595.gif" alt="" />
                     <h4 class="text-center">
@@ -177,6 +178,10 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/contacto.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
 </body>
 
 </html>

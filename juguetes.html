@@ -9,18 +9,14 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo-favicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Juguetes</title>
 </head>
@@ -30,8 +26,8 @@
     <header>
         <div class="header_inicio header_inicioJuguetes">
             <div class="fondo_negro d-flex justify-content-center flex-column align-items-center">
-                <h2 class="text-center text-white">Juguetes<span class="secundario">.</span> </h2>
-                <h5 class="text-white">Encontra todo lo que necesites</h5>
+                <h2 class="text-center text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">Juguetes<span class="secundario">.</span> </h2>
+                <h5 class="text-white" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">Encontra todo lo que necesites</h5>
 
             </div>
             <nav class="navbar bg-transparent px-5 navbar-expand-lg p-0 ">
@@ -70,7 +66,7 @@
     </header>
 
     <main class="py-5">
-        <h2 class="mx-5"><span class="primario">|</span> Articulos para tu mascota</h2>
+        <h2 class="mx-5" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100"><span class="primario">|</span> Articulos para tu mascota</h2>
 
         <div class="productos d-flex flex-wrap justify-content-around align-items-center">
             <div class="caja">
@@ -166,6 +162,11 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="module" src="./js/juguetes.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
+
 </body>
 
 </html>
