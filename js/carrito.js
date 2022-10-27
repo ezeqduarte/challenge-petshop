@@ -7,7 +7,7 @@ let $maincarrito = document.getElementById("main_carrito")
 
 imprimirArticulos(container_cards,carro);
 
-let btn_carro = document.querySelectorAll(`[class^="btn eliminar"]`);
+let btn_carro = document.querySelectorAll(`[class^="material-icons delet"]`);
 
 
 
@@ -35,7 +35,7 @@ function imprimirArticulos(contenedor, array) {
                          
                              <div style="position: absolute; top: 10px; right: 10px;">
                                  <button class="btn-borrar px-0 d-flex justify-content-center align-items-center rounded-circle">
-                                 <i class="material-icons">clear</i>
+                                 <i class="material-icons delet" id ="${objeto.nombre}">clear</i>
                                  </button>
                                  </div>
                                  <p style="position: absolute; top: 10px; left: 30px;" class="py-0 bg-secondary text-white btn-borrar px-2 rounded">Ultimas en stock</p>
@@ -61,7 +61,7 @@ function imprimirArticulos(contenedor, array) {
                  
                      <div style="position: absolute; top: 10px; right: 10px;">
                          <button class="btn-borrar px-0 d-flex justify-content-center align-items-center rounded-circle">
-                         <i class="material-icons">clear</i>
+                         <i class="material-icons delet" id ="${objeto.nombre}" >clear</i>
                          </button>
                          </div>                        
                      <div>
@@ -139,3 +139,12 @@ function limpiarCarro() {
 
 
 
+function FilterByname(data, string) {
+    return data.filter(data => data.nombre.toLowerCase().trim().includes(string.toLowerCase().trim()));
+  }
+
+btn_carro.forEach(e => e.addEventListener("click", () => {
+    console.dir(e.id);
+    oCarro.eliminarCarro(FilterByname(carro, e.id));
+    
+}));
