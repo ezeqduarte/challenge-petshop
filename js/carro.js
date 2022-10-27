@@ -21,7 +21,7 @@ export class Carro {
 
                     if (carro[i].encarro >= producto[0].stock) {
                         console.log("lo enconrto al max");
-                        alert("ha superado el stock maximo :C");
+                        swal("No quedan mas articulos en stock","Por cualquier inconveniente contactese con nosotros", "error");
                         return;
                     }
                     else if (e.nombre === producto[0].nombre) {

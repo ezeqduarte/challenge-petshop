@@ -23,6 +23,8 @@ async function getData() {
 
 }
 
+getData()
+
 
 const inputSearch = document.getElementById("js-search");
 inputSearch.addEventListener("input", getData);
@@ -114,7 +116,7 @@ function imprimirArticulos(contenedor, array) {
                     </div>
                     <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                         <a href="#" class="btn btn-primary">Detalles</a>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="btn btn-primary"><i class="large material-icons">add_shopping_cart</i></a>
                     </div>
         </article>
         
@@ -135,7 +137,7 @@ function imprimirArticulos(contenedor, array) {
                         </div>
                         <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                             <a href="#" class="btn btn-primary">Detalles</a>
-                            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                            <a href="#" class="btn btn-primary"><i class="large material-icons">add_shopping_cart</i></a>
                         </div>
             </article>
             
@@ -146,4 +148,3 @@ function imprimirArticulos(contenedor, array) {
 
 }
 
-getData()
