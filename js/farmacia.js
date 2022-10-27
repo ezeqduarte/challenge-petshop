@@ -1,5 +1,7 @@
 import { Carro } from './carro.js'
 let oCarro = new Carro();
+let valueRangeMin;
+let valueRangeMax;
 let arrayFiltroPorRango;
 let btn_carro
 let articles
@@ -71,38 +73,22 @@ function filtrosCruzados(contenedor, articles) {
         imprimirArticulos(contenedor, arrayFiltroPorPalabra);
     }
 
-    inputSearchMinValue.value = inputRangeMin.value
-    inputSearchMaxValue.value = inputRangeMax.value
+    actulizarValueRange()
 
 }
 
+valueRangeMin = document.getElementById("valueRangeMin")
+valueRangeMax = document.getElementById("valueRangeMax") 
+ 
+function actulizarValueRange() {   
 
-let inputSearchMinValue = document.getElementById("customRangeMin")
-inputSearchMinValue.addEventListener("input", actualizarRangeMin)
+valueRangeMin.innerHTML = `$ ${Number(inputRangeMin.value)}`   
+valueRangeMax.innerHTML = `$ ${Number(inputRangeMax.value)}`
 
-function actualizarRangeMin() {
-    if (inputSearchMinValue.value === "") {
-        inputRangeMin.value = 0
-    }
-    else {
-        inputRangeMin.value = inputSearchMinValue.value
-    }
-    console.log(inputSearchMinValue);
-    getData()
-}
+  }
 
- let inputSearchMaxValue = document.getElementById("customRangeMax")
-inputSearchMaxValue.addEventListener("input", actualizarRangeMax)
 
-function actualizarRangeMax() {
-    if (inputSearchMaxValue.value === "") {
-        inputRangeMax.value = 0
-    }
-    else {
-        inputRangeMax.value = inputSearchMaxValue.value
-    }
-    getData()
-}
+
 
 
 
