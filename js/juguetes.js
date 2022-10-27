@@ -86,15 +86,46 @@ function imprimirArticulos(contenedor, array) {
       contenedor.innerHTML += `
       <article>
       <div class="flip">
-      <p class="barraStock text-center bg-danger text-white">Queda(n) ${objeto.stock} en stock</p>
+      <div>
+      <p class="barraStock text-center text-white">Queda(n) ${objeto.stock} en stock</p>
+      </div>
                     <div class="content">
                         <div class="front">
                             <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
-                            <h2>${objeto.nombre}</h2>
-                            <p>$${objeto.precio}</p>
+                            <div class="d-flex flex-column">
+                            <h2 class="text-center">${objeto.nombre}</h2>
+                            <p class="text-center">$${objeto.precio}</p>
+                            </div>
                         </div>
                         <div class="back">
-                            <h2>Detalles</h2>
+                            <h2><span class="primario">|</span>Detalles</h2>
+                            <p>${objeto.descripcion}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="botones d-flex mb-3 flex-row justify-content-evenly">
+                <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>                
+            </div>
+        </article>
+      
+      `;
+    } else {
+      contenedor.innerHTML += `
+      <article>
+      <div class="flip">
+      <div>
+      <p class="barraStockConStock text-center"></p>
+      </div>
+                    <div class="content">
+                        <div class="front">
+                            <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
+                            <div class="d-flex flex-column">
+                            <h2 class="text-center">${objeto.nombre}</h2>
+                            <p class="text-center">$${objeto.precio}</p>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <h2><span class="primario">|</span>Detalles</h2>
                             <p>${objeto.descripcion}</p>
                         </div>
                     </div>
@@ -103,29 +134,6 @@ function imprimirArticulos(contenedor, array) {
                 <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
             </div>
         </article>
-      
-      `;
-    } else {
-      contenedor.innerHTML += `
-        <article class="containerCardJ">
-      <div class="flip">
-                    <div class="content">
-                        <div class="front">
-                            <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
-                            <h2>${objeto.nombre}</h2>
-                            <p>$${objeto.precio}</p>
-
-                        </div>
-                        <div class="back">
-                        <h2>Detalles</h2>
-                        <p>${objeto.descripcion}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="botones d-flex mb-3 flex-row justify-content-evenly">
-                        <a class="btn btn-primary" id="${objeto.nombre}"><i class="large material-icons">add_shopping_cart</i></a>
-                    </div>
-                </article>
       
       `;
     }

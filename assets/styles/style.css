@@ -229,6 +229,22 @@ border-radius: 5px;
 
 /*/ arranca juguetes /*/
 
+.btn-agregarCarro {
+
+  border-radius: 180px !important;
+  padding: 10px !important;
+  background-color: #0dbae6 !important;
+
+}
+
+.btn-cantidadCarro {
+
+  border-radius: 180px !important;
+  padding: 10px !important;
+  background-color:#dfb355 !important;
+
+}
+
 
   .card{
 background-color: #fdfdfd;
@@ -254,7 +270,8 @@ transition-duration:  400ms;
 }
 
 
-.caja{width: 100%;
+.caja{
+width: 100%;
 height: 20vh; 
 display: flex;
 justify-content: center;
@@ -262,17 +279,16 @@ align-items: center;
 flex-direction: column;
 }
 
-.barraBusquedaCaja{
-  width: 25%;
-  display: flex;
-  justify-content: start;
-
-  height: 20px;
+.caja input {
+  border: none !important;
 }
 
+
 .btn{
-  background-color: #384f72;
+  background-color: #5caabd !important;
   border: 0px;
+  padding: 15px !important;
+  border-radius: 45px !important;
 }
 
 
@@ -307,14 +323,16 @@ flex-direction: column;
   color: #30302d;
   opacity: 0.320;
 }
+
 .barraStockConStock{
-  background-color: #ffffff;
+  background-color: transparent;
+  color: transparent;
   height: 20px;
 }
 
 .barraStock{
   background-color: #cccaca !important;
-  border-radius: 10px 10px 0px 0px ;
+  border-radius: 20px 20px 0px 0px ;
 }
 
 .explora {
@@ -459,8 +477,11 @@ input {
 }
 
 .flip img {
+  height: 250px;
   border-radius: 16px 16px 8px 8px;
   margin-top: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .flip .back, .flip .front {
@@ -489,7 +510,7 @@ input {
 }
 
 .flip h2 {
-  font-weight: 200;
+  font-weight: 400;
   font-family: "DM Sans", sans-serif;
   font-size: 20px;
   color: black;
@@ -497,6 +518,7 @@ input {
 }
 
 .flip p {
+  font-weight: 200;
   font-size: 16px;
   color: black;
   line-height: 1.6em;
