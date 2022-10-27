@@ -145,6 +145,6 @@ function FilterByname(data, string) {
 
 btn_carro.forEach(e => e.addEventListener("click", () => {
     console.dir(e.id);
-    oCarro.eliminarCarro(FilterByname(carro, e.id));
+    oCarro.borrarProducto(FilterByname(carro, e.id));
     
 }));
