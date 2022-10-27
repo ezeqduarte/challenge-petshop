@@ -6,29 +6,25 @@ export class Carro {
 
 
     agregaCarro(producto) {
-        let carro =  JSON.parse(localStorage.getItem('carro'));
+        let carro = JSON.parse(localStorage.getItem('carro'));
         if (carro) {
-        console.dir(carro);
-          /*   console.log("en la funcion");
-            if (carro.length === 0) {
-                console.log("adding string");
-                Object.assign(...producto, { "encarro": 1 });
-                carro.push(...producto);
-                localStorage.setItem("carro", JSON.stringify(carro));
-                return;
-            } */
-            
-            console.dir(carro);
+           console.log("en la funcion");
+              if (carro.length === 0) {
+                  console.log("adding string");
+                  Object.assign(...producto, { "encarro": 1 });
+                  carro.push(...producto);
+                  localStorage.setItem("carro", JSON.stringify(carro));
+                  return;
+              } 
             carro.forEach((e, i) => {
-                console.log("carro problem")
-                if (carro.some(element=> element.nombre === producto[0].nombre )) {
-                   
+                if (carro.some(element => element.nombre === producto[0].nombre)) {
+
                     if (carro[i].encarro >= producto[0].stock) {
                         console.log("lo enconrto al max");
-                        alert("ha superado el stock maximo :C");
+                        swal("No quedan mas articulos en stock","Por cualquier inconveniente contactese con nosotros", "error");
                         return;
                     }
-                    else if(e.nombre === producto[0].nombre  ) {
+                    else if (e.nombre === producto[0].nombre) {
                         carro[i].encarro += 1;
                         console.log("incrasing");
                         localStorage.setItem("carro", JSON.stringify(carro));
@@ -37,6 +33,7 @@ export class Carro {
                     }
                 }
                 else {
+                    console.dir(...producto);
                     console.log("agregando uno nuevo porq es diferente");
                     Object.assign(...producto, { "encarro": 1 });
                     carro.push(...producto);
@@ -49,7 +46,7 @@ export class Carro {
 
         }
         else {
-            let carro =[];
+            let carro = [];
             carro.push(Object.assign(...producto, { "encarro": 1 }));
             localStorage.setItem("carro", JSON.stringify(carro));
             console.dir(localStorage.getItem("carro"));
@@ -59,25 +56,27 @@ export class Carro {
 
 
     eliminarCarro(producto) {
-        let carro = localStorage.getItem('carro')
-        if (carro) {
+        let carro = JSON.parse(localStorage.getItem('carro'));
+        if (carro.some(element => element.nombre === producto[0].nombre)) {
             carro.forEach((e, i) => {
-                if (e.nombre === producto[0].nombre ) {
-                    if (e.encarro === 1) {
-                        carro[i].splice(i, 1);
-                        localStorage.setItem("carro", JSON.stringify(carro));
-                        return;
-                    }
-                    else {
-                        carro[i].encarro--;
-                        localStorage.setItem("carro", JSON.stringify(carro));
-                    }
+
+                if (e.encarro === 1) {
+                    carro.splice(i, 1);
+                    localStorage.setItem("carro", JSON.stringify(carro));
+                    return;
                 }
                 else {
-                    alert("Producto no esta en carro");
+                    carro[i].encarro--;
+                    localStorage.setItem("carro", JSON.stringify(carro));
+                    return;
                 }
             });
         }
+        else {
+            window.location.reload();
+        }
+
+
 
 
     }
@@ -85,4 +84,6 @@ export class Carro {
     eraseCarro() {
         localStorage.clear();
     }
+
+    
 }

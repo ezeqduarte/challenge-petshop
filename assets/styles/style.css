@@ -130,6 +130,12 @@ nav .active {
 
 }
 
+#main_carrito {
+  min-height: 70vh !important;
+}
+
+
+
 
 .header_inicio h2 {
   font-size: 3.5rem !important;
@@ -167,14 +173,28 @@ nav .active {
 }
 
 .datos {
- min-height: 80vh;
+  padding-top: 50px;
+ min-height: 50vh;
+}
+
+.detalle_index {  
+  position: relative;
+  min-height: 10vh !important;
+}
+
+.detalle_index h2 {
+  position: absolute;
+  left: 35%;
+  bottom: -19px;
 }
 
 /* .texto_datos p {
 } */
 
-.datos img {
+.mindyperro {
   width: 100%;
+  object-fit: cover;
+  object-position: 100%;
   transform: rotate(-180deg);
   transform:rotateY(180deg);
 }
@@ -239,10 +259,7 @@ flex-direction: column;
   border: 0px;
 }
 
-.btn:hover{
-  background-color: #d15171 !important;
-  transition-duration: 500ms !important;
-}
+
 
 .card h5 {
   font-size: 15px;
@@ -366,7 +383,7 @@ footer {
 }
 
 .contact form {
-  width: 40%;
+  width: 100%;
 }
 
 .info_contact div img {
@@ -377,6 +394,110 @@ iframe {
   border-radius: 25px !important;
   width: 300px;
   height: 450px;
+}
+
+/*/ ARRANCA CARRITO /*/
+
+.barrastockCarrito{
+    border-radius: 6px;
+    width: 342px;
+    height: 35px;
+    text-align: center !important;
+}
+
+.card-carrito {
+  border-top: solid 1px black !important;
+  border-bottom: solid 1px black !important;
+  width: 60vw;
+}
+
+#contenedor_cards {
+  min-height: 30vh !important;
+}
+
+.btn-limpiar {
+
+  background-color: rgb(216, 216, 216) !important;
+  border: none !important;
+
+}
+
+.btn-comprar {
+
+  background-color: rgb(216, 216, 216) !important;
+  border: none !important;
+
+}
+
+.btn-borrar {
+  border: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI",Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.tarjeta {
+  max-width: 65vw;
+  margin: 48px auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.contenido {
+  display: flex;
+}
+@media (max-width: 1024px){
+  .contenido{
+  flex-direction: column;
+  }
+  .tarjeta {
+   max-width: 95vw;
+  }
+}
+.ladoIzq, .ladoDer {
+  width: 100%;
+}
+.ladoDer img {
+  width: 100%;
+  height: 100%;
+  border-style: none;
+}
+.ladoIzq {
+  background: rgb(41, 37, 37);
+  color: white;
+  padding: 48px
+}
+.btn {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 14px;
+  border-radius: 5px;
+  margin-top: 18px;
+}
+a.btn{
+   text-decoration: none;
+}
+a.btn:first-of-type {
+   background: #5252b4;
+   color: white;
+}
+a.btn:hover{
+   opacity: 0.8;
 }
 
 /*/ ARRANCA MEDIA QUERY /*/
@@ -414,6 +535,8 @@ iframe {
     width: 575px;
     height: 450px;
   }
+
+ 
 }
 
 /*/ Large devices (desktops, 992px and up) /*/
@@ -429,6 +552,9 @@ iframe {
 
 /*/ X-Large devices (large desktops, 1200px and up) /*/
 @media (min-width: 1200px) {
+  .contact form {
+    width: 40%;
+  }
 }
 
 /*/ XX-Large devices (larger desktops, 1400px and up) /*/

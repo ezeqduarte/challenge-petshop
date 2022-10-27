@@ -95,7 +95,7 @@ function imprimirArticulos(contenedor, array) {
                 </div>
                 <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                     <a href="#" class="btn btn-primary">Detalles</a>
-                    <a  class="btn btn-primary" id="${objeto.nombre}" name="${objeto.precio}" >Agregar al carrito</a>
+                    <a    class="btn btn-primary"  id="${objeto.nombre}" username="${objeto.precio}"><i class="large material-icons">add_shopping_cart</i></a>
                 </div>
     </article>
     
@@ -111,7 +111,8 @@ function imprimirArticulos(contenedor, array) {
                     </div>
                     <div class="botones d-flex mb-3 flex-row justify-content-evenly">
                         <a href="./detalles.html" class="btn btn-primary">Detalles</a>
-                        <a    class="btn btn-primary"  id="${objeto.nombre}" username="${objeto.precio}">Agregar al carrito</a>
+                        <a    class="btn btn-primary"  id="${objeto.nombre}" username="${objeto.precio}"><i class="large material-icons">add_shopping_cart</i></a>
+                       
                     </div>
         </article>
         
