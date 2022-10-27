@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo-favicon.png" type="image/x-icon">
     <title>Mindy Petshop</title>
 
@@ -32,7 +33,7 @@
                     <a class="navbar-brand" href="#"><img
                             src="https://cdn.discordapp.com/attachments/1026888381814288424/1034618541296586762/Sin_titulo-1.png"
                             class="logo flex-grow-1" alt="Logo de la pagina"></a>
-                    <h1 class="text-white">M</h1>
+                    <h1 class="text-white"></h1>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -52,7 +53,7 @@
                                 <a class="nav-link text-white" aria-current="page" href="contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item px-1">
-                                <a class="nav-link text-white" aria-current="page" href="carrito.html">Carrito</a>
+                                <a class="nav-link text-white" aria-current="page" href="carrito.html"><i class="large material-icons">shopping_cart</i></a>
                             </li>
                         </ul>
                     </div>
@@ -63,7 +64,7 @@
     </header>
 
 
-    <div class="">
+    <div>
         <main class="main_inicio ">
 
             <div
@@ -78,10 +79,30 @@
                         cuidado del medio ambiente.</p>
                 </div>
                 <div>
-                    <img src="https://cdn.discordapp.com/attachments/1026888381814288424/1034897115400392704/pngwing.com_4.png"
+                    <img class="mindyperro" src="https://cdn.discordapp.com/attachments/1026888381814288424/1034897115400392704/pngwing.com_4.png"
                         width="400" height="400" alt="">
                 </div>
-
+                <div class="informacion_inicio d-flex justify-content-evenly flex-wrap">
+                    <div class="div_informacion_inicio d-flex flex-column justify-content-center">
+                        <div class="d-flex justify-content-center"><img
+                                src="https://cdn-icons-gif.flaticon.com/6416/6416387.gif" alt="camion"></div>
+                        <h3 class="text-center">Envios a todo el pais</h3>
+                        <p class="text-center">Envío seguro, compra hoy y recibi tu pedido en máximo 48hs hábiles.</p>
+                    </div>
+                    <div class="div_informacion_inicio d-flex flex-column justify-content-center">
+                        <div class="d-flex justify-content-center"><img
+                                src="https://cdn-icons-gif.flaticon.com/6569/6569127.gif" alt=""></div>
+                        <h3 class="text-center">Sitio seguro</h3>
+                        <p class="text-center">Protegemos tus datos</p>
+                    </div>
+                    <div class="div_informacion_inicio d-flex flex-column justify-content-center">
+                        <div class="d-flex justify-content-center"><img
+                                src="https://cdn-icons-gif.flaticon.com/6172/6172509.gif" alt=""></div>
+                        <h3 class="text-center">Medios de pago</h3>
+                        <p class="text-center">Transferencia bancia, Mercado Pago, UALA, PagoFacil, Rapipago, BaproPagos,
+                            Provincia Pagos.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- <div class="explora">
@@ -90,27 +111,7 @@
 
             </div> -->
 
-            <div class="informacion_inicio d-flex justify-content-evenly flex-wrap">
-                <div class="div_informacion_inicio d-flex flex-column justify-content-center">
-                    <div class="d-flex justify-content-center"><img
-                            src="https://cdn-icons-gif.flaticon.com/6416/6416387.gif" alt="camion"></div>
-                    <h3 class="text-center">Envios a todo el pais</h3>
-                    <p class="text-center">Envío seguro, compra hoy y recibi tu pedido en máximo 48hs hábiles.</p>
-                </div>
-                <div class="div_informacion_inicio d-flex flex-column justify-content-center">
-                    <div class="d-flex justify-content-center"><img
-                            src="https://cdn-icons-gif.flaticon.com/6569/6569127.gif" alt=""></div>
-                    <h3 class="text-center">Sitio seguro</h3>
-                    <p class="text-center">Protegemos tus datos</p>
-                </div>
-                <div class="div_informacion_inicio d-flex flex-column justify-content-center">
-                    <div class="d-flex justify-content-center"><img
-                            src="https://cdn-icons-gif.flaticon.com/6172/6172509.gif" alt=""></div>
-                    <h3 class="text-center">Medios de pago</h3>
-                    <p class="text-center">Transferencia bancia, Mercado Pago, UALA, PagoFacil, Rapipago, BaproPagos,
-                        Provincia Pagos.</p>
-                </div>
-            </div>
+            
 
 
             <!--------------------------------------------------- ARRANCA CAROUSEL --------------------------------------------------->
@@ -187,12 +188,16 @@
         </main>
     </div>
 
+    <div class="detalle_index d-none d-xl-flex">
+        <h2 class="fs-1">Mindy tu petshop de confianza<span class="primario">.</span></h2>
+    </div>
+
     <div class="footer-clean py-5 bg-light">
         <footer>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Contacto <span class="secundario">.</span></h3>
+                        <h3>Contacto</h3>
                         <ul>
                             <li><a href="./contacto.html">info@petshopfranco.com</a></li>
                             <li><a href="./contacto.html">+54 (011) 1564844200</a></li>
@@ -200,7 +205,7 @@
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Servicios <span class="secundario">.</span></h3>
+                        <h3>Servicios</h3>
                         <ul>
                             <li><a href="#">Venta de articulos</a></li>
                             <li><a href="#">Cuidado de tus mascotas</a></li>
@@ -208,7 +213,7 @@
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Explora <span class="secundario">.</span></h3>
+                        <h3>Explora</h3>
                         <ul>
                             <li><a href="./juguetes.html">Juguetes</a></li>
                             <li><a href="./farmacia.html">Remedios</a></li>
@@ -217,7 +222,7 @@
                     </div>
 
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Nosotros <span class="secundario">.</span></h3>
+                        <h3>Nosotros</h3>
                         <ul>
 
                             <li>Mindy Petshop © 2022</li>

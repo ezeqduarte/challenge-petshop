@@ -3,7 +3,7 @@ let oCarro = new Carro();
 let carro = JSON.parse(localStorage.getItem('carro'));
 let container_cards = document.getElementById("contenedor_cards");
 let $maincarrito = document.getElementById("main_carrito")
-let $btnCompra = document.getElementById("comprarcarro")
+
 
 imprimirArticulos(container_cards,carro);
 
@@ -88,10 +88,24 @@ function imprimirArticulos(contenedor, array) {
     
 }
 
-$btnCompra.addEventListener("click", realizarComprar())
 
-function realizarComprar() {       
+let $btnCompra = document.getElementById("comprarcarro")
+let $btnLimpiar = document.getElementById("limpiarcarro")
 
-    alert('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
+$btnCompra.addEventListener("click", realizarCompra)
+$btnLimpiar.addEventListener("click", limpiarCarro)
+
+
+
+function realizarCompra() {      
+
+    swal('Su compra fue realizada con exito', 'Gracias por confiar en nosotros', 'success');
 
 }
+
+function limpiarCarro() {      
+
+    swal('Limpiaste el carro con exito', 'Vuelve a la seccion de compras para recargarlo', 'success');
+
+}
+
