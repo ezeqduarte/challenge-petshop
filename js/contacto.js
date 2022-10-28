@@ -36,8 +36,9 @@ function FormData(evento) {
     datosConsulta.push(datosUsuario)
     localStorage.setItem('datosConsulta', JSON.stringify(datosConsulta) ) 
     evento.preventDefault() 
-    swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
+   
     $form.reset()
+    swal('Gracias por comunicarte con nosotros', 'Tu mensaje sera leido y contestado a la brevedad', 'success');
    
     
     
