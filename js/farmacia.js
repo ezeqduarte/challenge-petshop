@@ -108,8 +108,10 @@ function imprimirArticulos(contenedor, array) {
                               <div class="front">
                                   <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
                                   <div class="d-flex flex-column">
+                                 
                                   <h2 class="text-center">${objeto.nombre}</h2>
                                   <p class="text-center">$${objeto.precio}</p>
+                                 
                                   </div>
                               </div>
                               <div class="back">
@@ -136,8 +138,10 @@ function imprimirArticulos(contenedor, array) {
                               <div class="front">
                                   <img class="card-img-top" src="${objeto.imagen}" alt="${objeto.nombre}">
                                   <div class="d-flex flex-column">
+                                  
                                   <h2 class="text-center">${objeto.nombre}</h2>
                                   <p class="text-center">$${objeto.precio}</p>
+                                  
                                   </div>
                               </div>
                               <div class="back">
