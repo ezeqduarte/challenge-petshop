@@ -36,7 +36,7 @@ function imprimirArticulos(contenedor, array) {
                              <div style="position: absolute; top: 10px; right: 10px;">
                                  <button class="btn-borrar px-0 d-flex justify-content-center align-items-center rounded-circle">
                                  <i class="material-icons delet" id ="${objeto.nombre}">clear</i>
-                                 <button class="eliminar-carro" id ="${objeto.nombre}">presioname\uD83E\uDD75</button>
+                                 <button class="eliminar-carro btn-borrar rounded-circle d-flex justify-content-center align-items-center" id ="${objeto.nombre}"> <i class="material-icons" id ="${objeto.nombre}">remove</i></button>
                                  </button>
                                  </div>
                                  <p style="position: absolute; top: 10px; left: 30px;" class="py-0 bg-secondary text-white btn-borrar px-2 rounded">Ultimas en stock</p>
@@ -60,12 +60,12 @@ function imprimirArticulos(contenedor, array) {
                  
                  <div class="d-flex card-carrito justify-content-evenly align-items-center flex-column flex-md-row" style="position: relative;">
                  
-                     <div style="position: absolute; top: 10px; right: 10px;">
-                         <button class="btn-borrar px-0 d-flex justify-content-center align-items-center rounded-circle">
-                         <i class="eliminar-carro" id ="${objeto.nombre}">presioname\uD83E\uDD75</i>
-                         <button class="material-icons delet" id ="${objeto.nombre}" >clear</button>
-                         </button>
-                         </div>                        
+                 <div style="position: absolute; top: 10px; right: 10px;">
+                 <button class="btn-borrar px-0 d-flex justify-content-center align-items-center rounded-circle">
+                 <i class="material-icons delet" id ="${objeto.nombre}">clear</i>
+                 <button class="eliminar-carro btn-borrar rounded-circle d-flex justify-content-center align-items-center" id ="${objeto.nombre}"> <i class="material-icons" id ="${objeto.nombre}">remove</i></button>
+                 </button>
+                 </div>                       
                      <div>
                          <img src="${objeto.imagen}" style="width: 200px ;" alt="${objeto.nombre}">
                      </div>
