@@ -154,6 +154,7 @@ let btn_eliminar = document.querySelectorAll(`[class^="eliminar-carro"]`);
 console.dir(btn_eliminar);
 
 btn_eliminar.forEach(e => e.addEventListener("click", () => {
+    
     console.dir(e.id);
     oCarro.eliminarCarro(FilterByname(carro, e.id));
 

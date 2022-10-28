@@ -88,7 +88,7 @@ function imprimirArticulos(contenedor, array) {
       <article>
       <div class="flip">
       <div>
-      <p class="barraStock text-center text-white">Queda(n) ${objeto.stock} en stock</p>
+      <p class="barraStock bg-secondary text-white text-center text-white">Queda(n) ${objeto.stock} en stock</p>
       </div>
                     <div class="content">
                         <div class="front">
