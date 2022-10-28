@@ -107,6 +107,14 @@ border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.61) 0px -5px 30px;
 }
 
+.irACarro {
+
+  padding: 10px !important;
+  background-color: rgb(63, 192, 231) !important;
+  border-radius: 50px;
+
+}
+
 
 .header_inicioJuguetes { background-image: url(../img/fondomostazaperro.png);
   background-attachment: fixed;
