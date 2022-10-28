@@ -533,7 +533,7 @@ input {
   bottom: 0;
   position: absolute;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
